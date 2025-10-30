@@ -9,7 +9,7 @@ body {
     font-size: calc(10px + 2vmin) !important;
     line-height: 1.42857143;
     color: #fff;
-    background-color: #313131;
+    background-color: #292929;
     max-width: 100vw;
     margin: 0;
     padding: 0;
@@ -70,7 +70,7 @@ a {
     align-items: center;
     text-align: center;
     margin: 0 2vmin 0 2vmin;
-    color: #313131;
+    color: #292929;
 }
 
 .header h1 {
@@ -80,7 +80,7 @@ a {
     line-height: 1;
     color: inherit;
     text-shadow: #a1d9ff 2px 2px 2px;
-    /* text-decoration:underline #313131 solid;
+    /* text-decoration:underline #292929 solid;
     text-decoration-skip-ink: none; */
 }
 
@@ -108,7 +108,7 @@ a {
     text-align: center;
     max-width: 60%;
     font-size: 1em;
-    color: #313131;
+    color: #292929;
 }
 
 .header-nav nav {
@@ -134,7 +134,7 @@ a {
 
 .header-nav nav a:hover {
     color: #693131;
-    text-decoration:underline #313131 solid;
+    text-decoration:underline #292929 solid;
     text-decoration-skip-ink: none;
     cursor: pointer;
 }
@@ -161,14 +161,14 @@ a {
 
 .welcome-bg {
     min-height: 90vh;
-    background-color: #313131;
+    background-color: #292929;
     z-index: 1;
     position: relative;
 }
 
 .welcome-seperator-horizontal{
     border: none;
-    color: #313131;
+    color: #292929;
     border-radius: 1px;
     margin: 0 0 0 0;
     min-width: 100%;
@@ -342,7 +342,7 @@ a {
     min-height: auto;
     width: 90vw;
     max-width: 90vw;
-    background-color: #313131;
+    background-color: #292929;
     padding: 0.2em 0 0.2em 0;
     text-align: center;
     font-size: 1em;
@@ -361,6 +361,21 @@ a {
     align-items: flex-start;
     width: 100%;
     padding: 1em;
+}
+
+.container-text a {
+    color: #61dafb;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block; /* allows transform to work reliably */
+    transition: color 100ms ease, transform 100ms ease;
+}
+
+.container-text a:hover,
+.container-text a:focus {
+    color: #21a1f1; /* readable accent color */
+    transform: scale(1.01);
+    text-decoration: underline #90b4d8 solid 1px;
 }
 
 .aboutme a {
@@ -392,7 +407,7 @@ a {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    background-color: #424242;
+    background-color: #313131;
     color: #f1f1f1;
     padding: 0.5em 1em;
     border: 1px solid #616161;
@@ -439,7 +454,7 @@ a {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
-    background-color: #424242;
+    background-color: #313131;
     border-radius: 0.7em;
     margin-bottom: 0 !important;
 }
@@ -471,7 +486,7 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #424242;
+    background-color: #313131;
     padding: 1em;
     border-radius: 0.7em;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
@@ -667,7 +682,7 @@ a {
     max-width: 100vw;
     min-height: auto;
     height: auto;
-    background-color: #313131;
+    background-color: #292929;
     text-align: center;
     font-size: 1em;
     color: #fff;
@@ -824,7 +839,7 @@ a {
     padding: 0;  /* Updated padding property */
     margin: 0;
     text-align: center;
-    color: #313131;
+    color: #292929;
 }
 
 .footer.footer-row {
@@ -840,7 +855,7 @@ a {
     bottom: 0;
     text-align: center;
     font-size: 2em;
-    color: #313131;
+    color: #292929;
 }
 
 .footer .copyright-bottom {
@@ -854,7 +869,7 @@ a {
     text-align: center;
     background-color: inherit;
     font-size: 1em;
-    color: #313131;
+    color: #292929;
 }
 
 .footer .copyright-bottom p {
@@ -882,7 +897,7 @@ a {
     align-items: center;
     text-align: center;
     font-size: 0.9em;
-    color: #313131;
+    color: #292929;
     padding: 0 0 0 0;
 }
 
@@ -905,7 +920,7 @@ a {
         height: auto;
         width: 100%;
         max-width: 100vw;
-        background-color: #313131;
+        background-color: #292929;
         padding: 0 0 0 0;
         text-align: center;
         font-size: 1em;
@@ -932,13 +947,22 @@ a {
     width: auto;
     min-width: 25vw;
     max-width: 90%;
-    background-color: transparent;
+    background-color: #313131;
     box-shadow: #fff 0px 0px 0.5em 0px;
     padding: 0.1em 0 0.1em 0;
     text-align: center;
     font-size: 1em;
     border-radius: 0.7em;
     margin: auto;
+}
+
+/* if landscape mode, limit min-width and max-width for responsiveness. */
+@media screen and (orientation: landscape) {
+    /* Add landscape-specific rules*/
+    .column .project { 
+        min-width: 26vw;
+        max-width: 26vw; 
+    }
 }
 
 .column .project .project-text {
