@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact</title>
+    <title>Contact | Çağan Efe Çalıdağ</title>
     <link rel="stylesheet" href="../css/style-main.css">
     <link rel="stylesheet" href="../css/contact.css">
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <script defer src="https://kit.fontawesome.com/09fb08f3d8.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="header">
+    <div class="header" id="header">
         <div class="header-image">
             <a href="/"><img src="/files/images/icon-192.png" alt="Cagann Dev"></a>
         </div>
@@ -18,30 +19,41 @@
                 <a href="/#about">About</a>
                 <a href="/#skills">Skills</a>
                 <a href="/#projects">Projects</a>
-                <!-- <a href="/cv">CV</a> -->
-                <a href="#contactform">Contact</a>
+                <a href="/pages/contact.html">Contact</a>
             </nav>
         </div>
     </div>
-    <div class="contact-wrapper">
+    <div class="contact-wrapper" id="contactform">
         <div class="contact-text">
-            <h1> Contact Me </h1>
-            <p> You can contact me by filling the form below or emailing <a style="color: cadetblue;" href="mailto:efecalidag@gmail.com">efecalidag@gmail.com</a> (recommended) </p>
+            <h1>Contact Me</h1>
+            <p>Fill the form below to contact me.</p>
         </div>
-            <div class="contact-form-cool">
-                <form action="https://formspree.io/f/manwwqko" method="POST">
-                        <label for="full-name">Full Name or Organization Name</label>
-                        <input type="text" name="name" id="full-name" placeholder="Ex : Nancy Smith from Google LLC." required="">
-                        <label for="email-address">Email Address</label>
-                        <input type="email" name="_replyto" id="email-address" placeholder="email@domain.tld" required="">
-                        <label for="subject">Subject</label>
-                        <input name="subject" type="text" placeholder="Ex : Collaboration Opportunity" />
-                        <label for="message">Message</label>
-                        <textarea rows="10" name="message" id="message" placeholder="Your message to me. Do not write confidential or private information here." required=""></textarea>
-                        <input type="hidden" name="_subject" id="email-subject" value="Contact Form Submission"> <br>
-                        <button type="submit" value="Submit"> Send Mail </button>
-                </form>
+        <div class="contact-form-cool">
+            <form action="https://formspree.io/f/manwwqko" method="POST">
+                <label for="full-name">Full Name or Organization</label>
+                <input type="text" name="name" id="full-name" placeholder="Nancy Smith from Google LLC." required>
+                <label for="email-address">Email Address</label>
+                <input type="email" name="_replyto" id="email-address" placeholder="email@domain.tld" required>
+                <label for="subject">Subject</label>
+                <input name="subject" type="text" placeholder="Collaboration Opportunity">
+                <label for="message">Message</label>
+                <textarea name="message" id="message" placeholder="Your message. Do not include confidential information." required></textarea>
+                <input type="hidden" name="_subject" id="email-subject" value="Contact Form Submission">
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer-row">
+            <div class="footer-social">
+                <a href="https://www.linkedin.com/in/çağanefeçalıdağ" target="_blank"><i class="fa fa-linkedin-square"></i> LinkedIn</a> &nbsp;&nbsp;
+                <a href="https://github.com/MrBiscuitTR" target="_blank"><i class="fa fa-github"></i> GitHub</a> &nbsp;&nbsp;
+                <a href="https://www.instagram.com/cagancalidag/" target="_blank"><i class="fa fa-instagram"></i> Instagram</a> &nbsp;&nbsp;
+                <a href="https://www.twitter.com/Caganefe1" target="_blank"><i class="fa fa-twitter-square"></i> Twitter</a>
             </div>
+        </div>
+        <div class="copyright-bottom">
+            <p>© 2023<script>document.write("-", new Date().getFullYear());</script> <noscript>2024</noscript> Çağan Efe Çalıdağ, All rights reserved.</p>
         </div>
     </div>
 </body>

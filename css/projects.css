@@ -5,264 +5,307 @@ body {
     padding: 0;
     min-height: 100vh;
     height: fit-content;
-    
+    font-family: Inter, Montserrat, sans-serif;
+    color: #f1f1f1;
+    font-size: 18px !important;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
 }
 
+/* ── page container ─────────────────────────────────────────────── */
+.project-page-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 960px;
+    width: 92%;
+    margin: 0 auto;
+    padding: 1.6em 0 3em;
+    gap: 1.6em;
+}
+
+/* ── project title ──────────────────────────────────────────────── */
 h1.projectname {
     color: #ffffff;
-    font-size: 2em;
+    font-size: 26px;
+    font-weight: 300;
     text-align: center;
-    margin: 1.2em;
-    text-decoration: none !important;
-    /* shadow the same text in rainbow colors */
-    text-shadow:#316969 0 0 5px, #316969 0 0 10px, #316969 0 0 15px, #316969 0 0 20px, #316969 0 0 25px, #316969 0 0 30px, #316969 0 0 35px;
+    margin: 0.4em 0 0;
+    text-shadow: #316969 0 0 18px, #1d8080 0 0 30px;
+    letter-spacing: 0.02em;
 }
+
 span.projectname {
-    color: #ffffff;
-    font-size: 1.2em;
-    text-align: center;
-    margin: auto;
-    text-decoration: underline !important;
-    /* shadow the same text in rainbow colors */
-    text-shadow:#316969 0 0 5px, #316969 0 0 10px, #316969 0 0 15px, #316969 0 0 20px, #316969 0 0 25px, #316969 0 0 30px, #316969 0 0 35px;
+    color: #61dafb;
+    font-size: 1em;
+    font-weight: 500;
+    text-decoration: none !important;
 }
 
-.project-page-container {
-    display: flexbox;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 2em;
-}
-
-@media screen and (orientation: portrait) and (max-width: 600px) {
-    .project-page-container {
-        display: flex;
-        flex-direction: column;
-    }
-    
-}
-
+/* ── screenshot slider ──────────────────────────────────────────── */
 .screenshot-slider {
     display: flex;
     flex-direction: column;
-    justify-content: left;
-    align-items:flex-start;
-    /* margin: 2vw; */
-    max-width: 100%;
-    overflow-x: hidden;
-
+    gap: 0.4em;
 }
 
 .screenshot-slider h2 {
-    margin-top: 0.2em;
-    margin-bottom: 0.2em;
+    margin: 0;
+    font-size: 21px;
+    font-weight: 500;
+    color: #fff;
 }
+
 .screenshot-slider h3 {
-    /* margin-top: 0.2em; */
-    margin-top: 0;
-    margin-bottom: 0.4em;
+    margin: 0;
+    font-size: 14px;
+    font-weight: 300;
+    color: #888;
 }
 
 .screenshotswithbuttons {
     display: flex;
     flex-direction: row;
     width: 100%;
+    height: 240px;
+    border-radius: 0.6em;
+    overflow: hidden;
 }
 
 .screenshots {
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    /* border-radius: 0.7em; */
-    border: #313131 1px solid;
+    align-items: stretch;
     overflow-x: scroll;
     scrollbar-width: none;
-    scrollbar-color: #316969 #00000000;
-    cursor:grab;
-    /* cursor: pointer; */
-    max-width: 100%;
-    padding: 10px 5px 10px 5px;
-    background-color: #313131;
-    max-height: 55vh;
+    cursor: grab;
+    background-color: #1a1a1a;
+    padding: 6px;
+    gap: 5px;
+    flex: 1;
+    height: 100%;
+    box-sizing: border-box;
 }
 
-button.prev {
-    background-color: #313131;
-    color: #ffffff;
-    border: none;
-    max-width: 5%;
-    cursor: pointer;
-    border-radius: 0.7em 0 0 0.7em;
-    padding: 0 1em 0 1em; 
-    
-}
-button.next{
-    background-color: #313131;
-    color: #ffffff;
-    border: none;
-    max-width: 5%;
-    cursor: pointer;
-    border-radius: 0 0.7em 0.7em 0;
-    padding: 0 1em 0 1em; 
-    
+.screenshots::-webkit-scrollbar {
+    display: none;
 }
 
-button.prev:hover, button.next:hover {
-    background-color: #505050;
-}
-
-@media screen and (orientation: portrait) {
-    .prev , .next {
-        display: none;
-    }
-    
-}
-
+/* Each image fills the container height, width follows 16:9 */
 .screenshots img {
-    width: 100%;
-    min-width: 27vw;
-    height: 98%;
-    /* height: 200px; */
-    object-fit: fill;
-    border: 0.1em solid #696969;
-    border-radius: 0.3em;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    aspect-ratio: 16/9; /* 16:9 determines height*/
-    margin: 0 2px 0 2px;
+    flex-shrink: 0;
+    height: 100%;
+    width: auto;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    border-radius: 0.35em;
+    border: 1px solid #2e2e2e;
+    transition: opacity 0.2s ease;
+    display: block;
+}
+
+.screenshots img:hover {
+    opacity: 0.82;
+    cursor: zoom-in;
 }
 
 .screenshot {
-    max-height: 100%;
-    max-width: 25vw;
+    flex-shrink: 0;
+}
+
+button.prev,
+button.next {
+    background-color: #1a1a1a;
+    color: #aaa;
     border: none;
-    height: 100%;
+    padding: 0 10px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    flex-shrink: 0;
+    width: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button.prev {
+    border-radius: 0.6em 0 0 0.6em;
+}
+
+button.next {
+    border-radius: 0 0.6em 0.6em 0;
+}
+
+button.prev:hover,
+button.next:hover {
+    background-color: #2e2e2e;
+    color: #fff;
 }
 
 @media screen and (orientation: portrait) {
-    .screenshot {
-        max-width: 32vw;
+    button.prev,
+    button.next {
+        display: none;
     }
-    .screenshots img{
-        aspect-ratio: 16/9 !important;
-        object-fit: fill;
-        /* width: 35vw; */
-        max-width: 100%;
-        height: 27vw;
-        min-width: 48vw;
-    }
-    .screenshots {
-        padding: 5px 5px 5px 5px;
+
+    .screenshotswithbuttons {
+        height: 180px;
         border-radius: 0.5em;
-        cursor: pointer;
-        height: 100%;
-        overflow: hidden;
     }
-    
 }
 
+@media screen and (max-width: 480px) {
+    .screenshotswithbuttons {
+        height: 160px;
+    }
+}
+
+/* ── modal ──────────────────────────────────────────────────────── */
 .modal {
     display: none;
     position: fixed;
-    z-index: 1;
-    padding-top: 12vh; /* 12% of the viewport height */
+    z-index: 200;
     left: 0;
     top: 0;
     width: 100%;
-    height: 120vh; /* 120% of the viewport height */
-    overflow: auto;
-    background-color: rgb(0, 0, 0);
-    background-color: rgba(0, 0, 0, 0.9);
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.92);
     align-items: center;
     justify-content: center;
     text-align: center;
+    padding-top: 8vh;
+    box-sizing: border-box;
 }
 
-.modal img{
-    margin: auto;
-    margin-bottom: 20vh; /* 20% of the viewport height */
+.modal img {
     display: block;
+    margin: 0 auto 16vh;
     width: auto;
     height: auto;
-    max-width: 90%;
-    max-height: 70vh;
-    border-radius: 0.7em;
+    max-width: 92%;
+    max-height: 72vh;
+    border-radius: 0.6em;
     object-fit: scale-down;
 }
 
+/* ── info panels ────────────────────────────────────────────────── */
 .project-infos {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    gap: 1em;
 }
 
 .info-panel {
     display: flex;
     flex-direction: column;
-    justify-content: left;
-    align-items: left;
-    width: 100%;
-    margin: 0;
-}
-
-.info-panel a{
-    color: #ffffff;
-    text-decoration: underline;
-}
-
-@media screen and (orientation: portrait) {
-    .info-panel {
-        display: flex;
-        flex-direction: column;
-    }
-    
+    background-color: #1e1e1e;
+    border-left: 3px solid #316969;
+    border-radius: 0 0.6em 0.6em 0;
+    padding: 1em 1.2em;
 }
 
 .info-panel h2 {
-    margin: 0.5em auto 0.5em 0;
+    margin: 0 0 0.5em;
+    font-size: 15px;
+    font-weight: 600;
+    color: #61dafb;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
 }
 
+.info-panel p {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.65;
+    color: #d8d8d8;
+}
+
+.info-panel ul {
+    margin: 0;
+    padding-left: 1.2em;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.8;
+    color: #d0d0d0;
+}
+
+.info-panel ul li {
+    margin-bottom: 0.1em;
+}
+
+.info-panel a {
+    color: #61dafb;
+    text-decoration: underline;
+    transition: color 0.15s ease;
+}
+
+.info-panel a:hover {
+    color: #a8edff;
+}
+
+/* ── project preview (collapsible iframe) ────────────────────────── */
 .projectpreview {
-    height: 30vh;
     width: 100%;
-}
-
-.projectpreview iframe {
-    display: block; width: 100%; border: none; overflow-y: auto; overflow-x: hidden;
 }
 
 .projectpreviewbutton {
     width: 100% !important;
-    border-radius: 0.7em;
-    border: 1px solid #696969;
-    text-align: center !important;
+    border-radius: 0.6em;
+    border: 1px solid #3a3a3a;
+    background-color: #1e1e1e;
+    color: #ccc;
+    padding: 10px 14px;
+    font-size: 13px;
+    text-align: left !important;
+    box-sizing: border-box;
+    cursor: pointer;
 }
 
-/* collapsible */
+.projectpreviewbutton:hover {
+    background-color: #2a2a2a;
+    color: #fff;
+}
+
+.projectpreview .content {
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.25s ease-out;
+    background-color: #1e1e1e;
+    border-radius: 0 0 0.6em 0.6em;
+    margin-bottom: 0 !important;
+}
+
+.projectpreview iframe {
+    display: block;
+    width: 100%;
+    height: 60vh;
+    border: none;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* ── collapsible (shared) ────────────────────────────────────────── */
 .collapsible {
-    font-size: 1em;
-    /* margin-left: 20%;
-    margin-right: 20%; */
+    font-size: 13px;
     cursor: pointer;
-    width: 20%;
     text-align: left;
     outline: none;
 }
 
-.expanded, .collapsible:hover {
-    background-color: #505050;
+.expanded,
+.collapsible:hover {
+    background-color: #2a2a2a;
 }
 
 .collapsible:after {
     content: '\002B';
+    float: right;
 }
 
 .expanded:after {
-    content: "\2212";
+    content: '\2212';
 }
 
 .content {
@@ -270,8 +313,7 @@ button.prev:hover, button.next:hover {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
-    background-color: #313131;
-    border-radius: 0.7em;
+    background-color: #1e1e1e;
+    border-radius: 0.6em;
     margin-bottom: 0 !important;
 }
-/* collapsible end */

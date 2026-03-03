@@ -18,6 +18,7 @@ function reveal() {
 }
 
 window.addEventListener("scroll", reveal);
+reveal();
 
 // cooler reveal effect (on click on text)
 const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
