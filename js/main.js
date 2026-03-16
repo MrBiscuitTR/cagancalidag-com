@@ -10,9 +10,11 @@ for (i = 0; i < coll.length; i++) {
     if (content.style.maxHeight){
       content.style.maxHeight = null;
       content.style.border = null;
+      content.style.padding = null;
     } else {
-      content.style.maxHeight = content.scrollHeight + "px";
+      content.style.maxHeight = "fit-content";
       content.style.border = "var(--widget-border)"
+      content.style.padding = "0.5em";
     } 
   });
 }
