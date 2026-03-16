@@ -7,12 +7,11 @@
 
 :root{
     --body-bg-color: #111d1d;
-    --body-bg-gradient: linear-gradient(
-        135deg,
-        #010e12 0%,
-        #02191f 40%,
-        #021516 75%,
-        #011010 100%
+    --body-bg-gradient: linear-gradient(135deg, 
+        #021a21 0%, 
+        #021216 40%, 
+        #03191b 75%, 
+        #011616 100%
     );
     --text-main: #dadfdd;
     --widget-bg: #020e10; /*#03191e*/
@@ -539,7 +538,7 @@ a {
     padding: 1.2em 1em;
     display: flex;
     flex-direction: column;
-    transition: box-shadow 0.25s ease;
+    transition: box-shadow 0.25s ease, opacity 1s ease, transform 1s ease;
     box-sizing: border-box;
 }
 
@@ -551,10 +550,10 @@ a {
 
 .skill-cat-title {
     margin: 0 0 0.6em 0;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 500;
     color: var(--selected-brighter);
-    text-decoration: underline #84c4f0 solid 1px;
+    /* text-decoration: underline #84c4f0 solid 1px; */
 }
 
 .skill-cat-body {
@@ -787,7 +786,8 @@ a {
     /* color: #fff; */
     color: var(--selected-brighter);
     padding: 0.2em 0 0.2em 0;
-    text-decoration: underline #84c4f0 solid 2px;
+    /* text-decoration: underline #84c4f0 solid 2px; */
+    text-shadow: 1px 1px 14px #00b4ff;
 }
 
 .general-container .container .container-text p {
@@ -911,7 +911,7 @@ a {
     box-shadow: 0 0 0 1px var(--selected-brighter), 0 4px 16px rgba(0,0,0,0.35);
     border-radius: 0.9em;
     overflow: hidden;
-    transition: opacity 1s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    transition: opacity 1s ease, transform 1s ease, box-shadow 0.2s ease;
     cursor: default;
     height: 270px;
 }
@@ -926,6 +926,7 @@ a {
         transform: translateY(-4px);
         /* box-shadow: 0 0 0 1px rgba(255,255,255,0.15), 0 8px 24px rgba(0,0,0,0.5); */
         box-shadow: 0 0 0 3px var(--selected-brighter), 0 16px 59px rgb(171 229 255 / 12%);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 }
 
