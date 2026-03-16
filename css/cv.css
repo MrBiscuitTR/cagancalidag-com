@@ -62,7 +62,7 @@ iframe {
 .old-cvs h2 {
     font-size: 12px;
     font-weight: 600;
-    color: #61dafb;
+    color: var(--selected-brighter);
     text-transform: uppercase;
     letter-spacing: 0.08em;
     margin: 0 0 0.8em;
@@ -81,7 +81,7 @@ iframe {
 }
 
 .old-cvs a {
-    color: #61dafb;
+    color: var(--selected-brighter);
     text-decoration: none;
 }
 

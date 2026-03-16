@@ -35,7 +35,7 @@
 }
 
 .contact-text a {
-    color: #61dafb;
+    color: var(--selected-brighter);
     text-decoration: underline;
     transition: color 0.15s ease;
 }
@@ -69,7 +69,7 @@
 .contact-form-cool label {
     font-size: 12px;
     font-weight: 500;
-    color: #61dafb;
+    color: var(--selected-brighter);
     letter-spacing: 0.06em;
     text-transform: uppercase;
     margin-bottom: 0.15em;

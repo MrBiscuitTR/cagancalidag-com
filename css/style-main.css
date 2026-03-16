@@ -16,7 +16,8 @@
     );
     --text-main: #dadfdd;
     --widget-bg: #020e10; /*#03191e*/
-    --selected-bg: #61dafbc2 ;/*#505050*/
+    --selected-bg: #61dafbc2; /*#505050*/
+    --selected-brighter: #61dafb;
     --widget-border: 1px solid teal;
     --header-footer-bg: #defdff;
 }
@@ -386,7 +387,7 @@ a {
 }
 
 .container-text a {
-    color: #61dafb;
+    color: var(--selected-brighter);
     text-decoration: none;
     font-weight: bold;
     display: inline-block; /* allows transform to work reliably */
@@ -551,7 +552,7 @@ a {
 @media (hover: hover) and (pointer: fine) {
     .cert-item:hover {
         transform: translateY(-4px);
-        box-shadow: 0 0 0 3px #61dafb, 0 16px 59px rgb(171 229 255 / 12%);
+        box-shadow: 0 0 0 3px var(--selected-brighter), 0 16px 59px rgb(171 229 255 / 12%);
     }
 }
 
@@ -598,7 +599,7 @@ a {
 }
 
 .cert-text a {
-    color: #61dafb;
+    color: var(--selected-brighter);
     text-decoration: none;
     font-weight: bold;
 }
@@ -698,7 +699,7 @@ a {
     font-weight: 300;
     line-height: 1.3;
     /* color: #fff; */
-    color: #61dafb;
+    color: var(--selected-brighter);
     padding: 0.2em 0 0.2em 0;
     text-decoration: underline #84c4f0 solid 2px;
 }
@@ -821,7 +822,7 @@ a {
     flex-direction: column;
     align-items: center;
     background: var(--widget-bg);
-    box-shadow: 0 0 0 1px #61dafb, 0 4px 16px rgba(0,0,0,0.35);
+    box-shadow: 0 0 0 1px var(--selected-brighter), 0 4px 16px rgba(0,0,0,0.35);
     border-radius: 0.9em;
     overflow: hidden;
     transition: opacity 1s ease, transform 0.2s ease, box-shadow 0.2s ease;
@@ -838,7 +839,7 @@ a {
     .project:hover {
         transform: translateY(-4px);
         /* box-shadow: 0 0 0 1px rgba(255,255,255,0.15), 0 8px 24px rgba(0,0,0,0.5); */
-        box-shadow: 0 0 0 3px #61dafb, 0 16px 59px rgb(171 229 255 / 12%);
+        box-shadow: 0 0 0 3px var(--selected-brighter), 0 16px 59px rgb(171 229 255 / 12%);
     }
 }
 
