@@ -10,9 +10,9 @@
     --body-bg-gradient: linear-gradient(
         135deg,
         #010e12 0%,
-        #021216 40%,
+        #02191f 40%,
         #021516 75%,
-        #011111 100%
+        #011010 100%
     );
     --text-main: #dadfdd;
     --widget-bg: #020e10; /*#03191e*/
@@ -21,7 +21,9 @@
     --header-footer-bg: #defdff;
 }
 
-
+html {
+    background-color: var(--header-footer-bg);
+}
 /* general */
 body {
     font-family:  Inter, Montserrat, sans-serif;
@@ -151,11 +153,13 @@ a {
     cursor: default;
 }
 
-.header-nav nav a:hover {
-    color: #0069ffcc;
-    text-decoration:underline #292929 solid;
-    text-decoration-skip-ink: none;
-    cursor: pointer;
+@media (hover: hover) and (pointer: fine) {
+    .header-nav nav a:hover {
+        color: #0069ffcc;
+        text-decoration:underline #292929 solid;
+        text-decoration-skip-ink: none;
+        cursor: pointer;
+    }
 }
 
 .welcome {
@@ -343,9 +347,11 @@ a {
     transition: all 0.3s ease-in-out;
 }
 
-.censor-blur:hover {
-    transition: all 0.3s ease-in-out;
-    filter: blur(0px);
+@media (hover: hover) and (pointer: fine) {
+    .censor-blur:hover {
+        transition: all 0.3s ease-in-out;
+        filter: blur(0px);
+    }
 }
 
 
@@ -387,11 +393,17 @@ a {
     transition: color 100ms ease, transform 100ms ease;
 }
 
-.container-text a:hover,
 .container-text a:focus {
-    color: #21a1f1; /* readable accent color */
+    color: #21a1f1;
     transform: scale(1.01);
     text-decoration: underline #90b4d8 solid 1px;
+}
+@media (hover: hover) and (pointer: fine) {
+    .container-text a:hover {
+        color: #21a1f1;
+        transform: scale(1.01);
+        text-decoration: underline #90b4d8 solid 1px;
+    }
 }
 .container-text.aboutme {
     text-align: left;
@@ -412,11 +424,17 @@ a {
 }
 
 /* on hover/focus change color a bit and grow slightly */
-.aboutme a:hover,
 .aboutme a:focus {
-    color: #51d9ff; /* readable accent color */
+    color: #51d9ff;
     transform: scale(1.01);
     text-decoration: underline #90b4d8 solid 1px;
+}
+@media (hover: hover) and (pointer: fine) {
+    .aboutme a:hover {
+        color: #51d9ff;
+        transform: scale(1.01);
+        text-decoration: underline #90b4d8 solid 1px;
+    }
 }
 
 /* Individual Skill Styling */
@@ -451,9 +469,11 @@ a {
     height: 2em;
 }
 
-.skill:hover {
-    background: var(--selected-bg);
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+@media (hover: hover) and (pointer: fine) {
+    .skill:hover {
+        background: var(--selected-bg);
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+    }
 }
 
 /* Expandable Skills */
@@ -468,8 +488,13 @@ a {
     outline: none;
 }
 
-.expanded, .collapsible:hover {
+.expanded {
     background: var(--selected-bg);
+}
+@media (hover: hover) and (pointer: fine) {
+    .collapsible:hover {
+        background: var(--selected-bg);
+    }
 }
 
 .collapsible:after {
@@ -523,9 +548,11 @@ a {
     box-sizing: border-box;
 }
 
-.cert-item:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 0 0 3px #61dafb, 0 16px 59px rgb(171 229 255 / 12%);
+@media (hover: hover) and (pointer: fine) {
+    .cert-item:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 0 0 3px #61dafb, 0 16px 59px rgb(171 229 255 / 12%);
+    }
 }
 
 .cert-item img {
@@ -537,8 +564,10 @@ a {
     transition: transform 0.3s ease;
 }
 
-.cert-item:hover img {
-    transform: scale(1.05);
+@media (hover: hover) and (pointer: fine) {
+    .cert-item:hover img {
+        transform: scale(1.05);
+    }
 }
 
 .cert-text {
@@ -574,8 +603,10 @@ a {
     font-weight: bold;
 }
 
-.cert-text a:hover {
-    text-decoration: underline;
+@media (hover: hover) and (pointer: fine) {
+    .cert-text a:hover {
+        text-decoration: underline;
+    }
 }
 
 @media screen and (max-width: 767px) {
@@ -803,10 +834,12 @@ a {
     text-decoration: none;
 }
 
-.project:hover {
-    transform: translateY(-4px);
-    /* box-shadow: 0 0 0 1px rgba(255,255,255,0.15), 0 8px 24px rgba(0,0,0,0.5); */
-    box-shadow: 0 0 0 3px #61dafb, 0 16px 59px rgb(171 229 255 / 12%);
+@media (hover: hover) and (pointer: fine) {
+    .project:hover {
+        transform: translateY(-4px);
+        /* box-shadow: 0 0 0 1px rgba(255,255,255,0.15), 0 8px 24px rgba(0,0,0,0.5); */
+        box-shadow: 0 0 0 3px #61dafb, 0 16px 59px rgb(171 229 255 / 12%);
+    }
 }
 
 .project .project-image {
@@ -835,10 +868,12 @@ a {
     height: 60px;
 }
 
-.project .project-image a:hover img,
-.project .project-image img:hover {
-    opacity: 0.75;
-    transform: scale(1.08);
+@media (hover: hover) and (pointer: fine) {
+    .project .project-image a:hover img,
+    .project .project-image img:hover {
+        opacity: 0.75;
+        transform: scale(1.08);
+    }
 }
 
 .project .project-text {

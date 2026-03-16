@@ -1,12 +1,13 @@
 
 body {
-    background-color: #292929;
+    background-color: var(--body-bg-color);
+    background: var(--body-bg-gradient);
     margin: 0;
     padding: 0;
     min-height: 100vh;
     height: fit-content;
     font-family: Inter, Montserrat, sans-serif;
-    color: #f1f1f1;
+    color: var(--text-main);
     font-size: 18px !important;
     -webkit-text-size-adjust: 100%;
     text-size-adjust: 100%;
@@ -25,17 +26,17 @@ body {
 
 /* ── project title ──────────────────────────────────────────────── */
 h1.projectname {
-    color: #ffffff;
+    color: #fff;
     font-size: 26px;
     font-weight: 300;
     text-align: center;
     margin: 0.4em 0 0;
-    text-shadow: #316969 0 0 18px, #1d8080 0 0 30px;
+    text-shadow: rgba(17, 177, 177, 0.734) 0 0 18px, rgba(29, 128, 128, 0.45) 0 0 30px;
     letter-spacing: 0.02em;
 }
 
 span.projectname {
-    color: #61dafb;
+    color: var(--selected-bg);
     font-size: 1em;
     font-weight: 500;
     text-decoration: none !important;
@@ -52,23 +53,28 @@ span.projectname {
     margin: 0;
     font-size: 21px;
     font-weight: 500;
-    color: #fff;
+    color: var(--text-main);
 }
 
 .screenshot-slider h3 {
     margin: 0;
     font-size: 14px;
     font-weight: 300;
-    color: #888;
+    color: #8ea29e;
 }
 
 .screenshotswithbuttons {
+    --slider-accent: var(--selected-bg);
     display: flex;
     flex-direction: row;
+    align-items: center;
     width: 100%;
     height: 240px;
     border-radius: 0.6em;
     overflow: hidden;
+    background: linear-gradient(180deg, #031418 0%, var(--widget-bg) 100%);
+    border: var(--widget-border);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04), 0 14px 30px rgba(0, 0, 0, 0.28);
 }
 
 .screenshots {
@@ -76,18 +82,28 @@ span.projectname {
     flex-direction: row;
     align-items: stretch;
     overflow-x: scroll;
+    overflow-y: hidden;
     scrollbar-width: none;
     cursor: grab;
-    background-color: #1a1a1a;
-    padding: 6px;
-    gap: 5px;
+    background: transparent;
+    padding: 8px;
+    gap: 8px;
     flex: 1;
     height: 100%;
     box-sizing: border-box;
+    scroll-behavior: auto;
+    scroll-snap-type: none;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
 }
 
 .screenshots::-webkit-scrollbar {
     display: none;
+}
+
+.screenshots.is-dragging {
+    scroll-snap-type: none;
+    cursor: grabbing;
 }
 
 /* Each image fills the container height, width follows 16:9 */
@@ -97,15 +113,26 @@ span.projectname {
     width: auto;
     aspect-ratio: 16/9;
     object-fit: cover;
-    border-radius: 0.35em;
-    border: 1px solid #2e2e2e;
-    transition: opacity 0.2s ease;
+    border-radius: 0.45em;
+    border: 1px solid #104446;
+    transition: transform 0.22s ease, opacity 0.22s ease, border-color 0.22s ease;
     display: block;
+    scroll-snap-align: start;
+    user-select: none;
+    -webkit-user-drag: none;
 }
 
-.screenshots img:hover {
-    opacity: 0.82;
-    cursor: zoom-in;
+@media (hover: hover) and (pointer: fine) {
+    .screenshots img:hover {
+        opacity: 0.94;
+        transform: translateY(-1px);
+        border-color: #3f3f3f;
+        cursor: grab;
+    }
+}
+
+.screenshots:active {
+    cursor: grabbing;
 }
 
 .screenshot {
@@ -114,32 +141,50 @@ span.projectname {
 
 button.prev,
 button.next {
-    background-color: #1a1a1a;
-    color: #aaa;
-    border: none;
-    padding: 0 10px;
+    background: linear-gradient(180deg, #133036 0%, #0a2126 100%);
+    color: var(--text-main);
+    border: var(--widget-border);
+    border-radius: 999px;
+    padding: 0;
     cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.2s ease, color 0.2s ease;
-    flex-shrink: 0;
-    width: 36px;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1;
+    transition: transform 0.18s ease, background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    width: 38px;
+    height: 38px;
+    flex: 0 0 38px;
     display: flex;
     align-items: center;
     justify-content: center;
+    align-self: center;
+    margin: 0 7px;
+    z-index: 2;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.34);
 }
 
 button.prev {
-    border-radius: 0.6em 0 0 0.6em;
+    margin-left: 10px;
 }
 
 button.next {
-    border-radius: 0 0.6em 0.6em 0;
+    margin-right: 10px;
 }
 
-button.prev:hover,
-button.next:hover {
-    background-color: #2e2e2e;
-    color: #fff;
+@media (hover: hover) and (pointer: fine) {
+    button.prev:hover,
+    button.next:hover {
+        background: linear-gradient(180deg, #19414a 0%, #102f37 100%);
+        border-color: #4ca2af;
+        color: #fff;
+        transform: translateY(-1px) scale(1.02);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.42);
+    }
+}
+
+button.prev:active,
+button.next:active {
+    transform: translateY(0) scale(0.97);
 }
 
 @media screen and (orientation: portrait) {
@@ -165,27 +210,117 @@ button.next:hover {
     display: none;
     position: fixed;
     z-index: 200;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.92);
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(1, 14, 18, 0.9);
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding-top: 8vh;
+    padding: 3vh 3vw;
     box-sizing: border-box;
+    backdrop-filter: blur(2px);
+
+    align-content: center;
 }
 
 .modal img {
     display: block;
-    margin: 0 auto 16vh;
+    margin: 0 auto;
     width: auto;
     height: auto;
-    max-width: 92%;
-    max-height: 72vh;
+    max-width: min(96vw, 1600px);
+    max-height: 92vh;
     border-radius: 0.6em;
-    object-fit: scale-down;
+    object-fit: contain;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.48);
+    cursor: zoom-in;
+    touch-action: none;
+    will-change: transform;
+    transition: transform 0.22s ease;
+    transform-origin: center center;
+    transform: translate3d(var(--modal-tx, 0px), var(--modal-ty, 0px), 0) scale(var(--modal-scale, 1));
+}
+
+.modal img.zoomed {
+    cursor: grab;
+    transition: none;
+}
+
+.modal img.zoomed.dragging {
+    cursor: grabbing;
+}
+
+.modal-hint {
+    position: fixed;
+    left: 50%;
+    top: 20px;
+    transform: translateX(-50%);
+    background: rgba(2, 14, 16, 0.72);
+    border: 1px solid rgba(158, 222, 229, 0.35);
+    color: #d7ece8;
+    padding: 8px 12px;
+    border-radius: 999px;
+    font-size: 12px;
+    letter-spacing: 0.01em;
+    z-index: 210;
+    pointer-events: none;
+    backdrop-filter: blur(3px);
+}
+
+.modal-zoom-map {
+    position: fixed;
+    left: 50%;
+    bottom: 18px;
+    transform: translateX(-50%);
+    width: min(240px, 46vw);
+    aspect-ratio: 16 / 9;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid rgba(158, 222, 229, 0.45);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.48);
+    background: rgba(2, 14, 16, 0.82);
+    backdrop-filter: blur(4px);
+    z-index: 210;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.16s ease;
+}
+
+.modal-zoom-map.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-zoom-map-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.modal-zoom-map-viewport {
+    position: absolute;
+    border: 2px solid #8ee6f6;
+    background: rgba(108, 220, 242, 0.16);
+    border-radius: 4px;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.32) inset;
+}
+
+@media (hover: none), (pointer: coarse) {
+    .screenshots {
+        scroll-snap-type: x proximity;
+    }
+
+    .modal-zoom-map {
+        display: none;
+    }
+
+    .modal-hint {
+        display: none;
+    }
 }
 
 /* ── info panels ────────────────────────────────────────────────── */
@@ -198,8 +333,9 @@ button.next:hover {
 .info-panel {
     display: flex;
     flex-direction: column;
-    background-color: #1e1e1e;
-    border-left: 3px solid #316969;
+    background-color: var(--widget-bg);
+    border-left: var(--widget-border);
+    border-left-width: 3px;
     border-radius: 0 0.6em 0.6em 0;
     padding: 1em 1.2em;
 }
@@ -208,7 +344,7 @@ button.next:hover {
     margin: 0 0 0.5em;
     font-size: 15px;
     font-weight: 600;
-    color: #61dafb;
+    color: var(--selected-bg);
     letter-spacing: 0.08em;
     text-transform: uppercase;
 }
@@ -218,7 +354,7 @@ button.next:hover {
     font-size: 16px;
     font-weight: 300;
     line-height: 1.65;
-    color: #d8d8d8;
+    color: var(--text-main);
 }
 
 .info-panel ul {
@@ -227,7 +363,7 @@ button.next:hover {
     font-size: 16px;
     font-weight: 300;
     line-height: 1.8;
-    color: #d0d0d0;
+    color: var(--text-main);
 }
 
 .info-panel ul li {
@@ -235,13 +371,15 @@ button.next:hover {
 }
 
 .info-panel a {
-    color: #61dafb;
+    color: var(--selected-bg);
     text-decoration: underline;
     transition: color 0.15s ease;
 }
 
-.info-panel a:hover {
-    color: #a8edff;
+@media (hover: hover) and (pointer: fine) {
+    .info-panel a:hover {
+        color: #a8edff;
+    }
 }
 
 /* ── project preview (collapsible iframe) ────────────────────────── */
@@ -252,9 +390,9 @@ button.next:hover {
 .projectpreviewbutton {
     width: 100% !important;
     border-radius: 0.6em;
-    border: 1px solid #3a3a3a;
-    background-color: #1e1e1e;
-    color: #ccc;
+    border: var(--widget-border);
+    background-color: var(--widget-bg);
+    color: var(--text-main);
     padding: 10px 14px;
     font-size: 13px;
     text-align: left !important;
@@ -262,9 +400,11 @@ button.next:hover {
     cursor: pointer;
 }
 
-.projectpreviewbutton:hover {
-    background-color: #2a2a2a;
-    color: #fff;
+@media (hover: hover) and (pointer: fine) {
+    .projectpreviewbutton:hover {
+        background-color: #2a2a2a;
+        color: #fff;
+    }
 }
 
 .projectpreview .content {
@@ -272,7 +412,7 @@ button.next:hover {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.25s ease-out;
-    background-color: #1e1e1e;
+    background-color: var(--widget-bg);
     border-radius: 0 0 0.6em 0.6em;
     margin-bottom: 0 !important;
 }
@@ -294,9 +434,13 @@ button.next:hover {
     outline: none;
 }
 
-.expanded,
-.collapsible:hover {
+.expanded {
     background-color: #2a2a2a;
+}
+@media (hover: hover) and (pointer: fine) {
+    .collapsible:hover {
+        background-color: #2a2a2a;
+    }
 }
 
 .collapsible:after {

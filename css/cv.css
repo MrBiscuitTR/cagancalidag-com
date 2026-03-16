@@ -1,16 +1,99 @@
+/* ── CV page ─────────────────────────────────────────────────────── */
+
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #000000;
     margin: 0;
     padding: 0;
-    color: white;
     min-height: 100vh;
     height: fit-content;
 }
+
+.cv-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    min-height: calc(100vh - 10vh);
+    background: var(--body-bg-gradient);
+    padding: 2.5em 0 5em;
+    box-sizing: border-box;
+    gap: 1.6em;
+}
+
+.cv-header-text {
+    text-align: center;
+}
+
+.cv-header-text h1 {
+    font-size: 26px;
+    font-weight: 300;
+    color: var(--text-main);
+    margin: 0 0 0.3em;
+}
+
+.cv-header-text p {
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--text-main);
+    opacity: 0.6;
+    margin: 0;
+}
+
 iframe {
     margin: 0;
     padding: 0;
-    width: 100vw;
-    min-height:100vh;
-    border: none;
+    width: 92vw;
+    max-width: 960px;
+    min-height: 80vh;
+    border: var(--widget-border);
+    border-radius: 0.5em;
+    background-color: var(--widget-bg);
+}
+
+.old-cvs {
+    width: 92vw;
+    max-width: 960px;
+    background-color: var(--widget-bg);
+    border-left: var(--widget-border);
+    border-radius: 0 0.6em 0.6em 0;
+    padding: 1.2em 1.5em;
+    box-sizing: border-box;
+}
+
+.old-cvs h2 {
+    font-size: 12px;
+    font-weight: 600;
+    color: #61dafb;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin: 0 0 0.8em;
+}
+
+.old-cvs ul {
+    margin: 0;
+    padding-left: 1.2em;
+}
+
+.old-cvs li {
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--text-main);
+    line-height: 1.7;
+}
+
+.old-cvs a {
+    color: #61dafb;
+    text-decoration: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .old-cvs a:hover {
+        text-decoration: underline;
+        color: #a8edff;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    iframe {
+        min-height: 60vh;
+    }
 }
