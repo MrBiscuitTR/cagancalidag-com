@@ -446,12 +446,12 @@ button.next:active {
 }
 
 .collapsible:after {
-    content: '\002B';
+    content: '\00a0\00a0\25B6';
     float: right;
 }
 
 .expanded:after {
-    content: '\2212';
+    content: '\00a0\00a0\25BC';
 }
 
 .content {
