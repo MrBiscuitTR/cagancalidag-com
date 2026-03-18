@@ -24,7 +24,7 @@ body {
 
 .project {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://source.unsplash.com/300x200/?nature,water');
-    border-radius: 5px;
+    border-radius: var(--border-radius-global);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     overflow: hidden;
 }

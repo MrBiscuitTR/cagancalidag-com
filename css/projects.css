@@ -21,6 +21,9 @@ body {
     margin: 0 auto;
     padding: 1.6em 0 3em;
     gap: 1.6em;
+
+    position: relative;
+    z-index: 0;
 }
 
 /* ── project title ──────────────────────────────────────────────── */
@@ -69,7 +72,7 @@ span.projectname {
     align-items: center;
     width: 100%;
     height: 240px;
-    border-radius: 0.6em;
+    border-radius: var(--border-radius-global);
     overflow: hidden;
     background: linear-gradient(180deg, #031418 0%, var(--widget-bg) 100%);
     border: var(--widget-border);
@@ -112,7 +115,7 @@ span.projectname {
     width: auto;
     aspect-ratio: 16/9;
     object-fit: cover;
-    border-radius: 0.45em;
+    border-radius: var(--border-radius-global);
     border: 1px solid #104446;
     transition: transform 0.22s ease, opacity 0.22s ease, border-color 0.22s ease;
     display: block;
@@ -194,7 +197,7 @@ button.next:active {
 
     .screenshotswithbuttons {
         height: 180px;
-        border-radius: 0.5em;
+        border-radius: var(--border-radius-global);
     }
 }
 
@@ -230,7 +233,7 @@ button.next:active {
     height: auto;
     max-width: min(96vw, 1600px);
     max-height: 92vh;
-    border-radius: 0.6em;
+    border-radius: var(--border-radius-global);
     object-fit: contain;
     box-shadow: 0 24px 60px rgba(0, 0, 0, 0.48);
     cursor: zoom-in;
@@ -335,7 +338,7 @@ button.next:active {
     background-color: var(--widget-bg);
     border-left: var(--widget-border);
     border-left-width: 3px;
-    border-radius: 0 0.6em 0.6em 0;
+    border-radius: 0 var(--border-radius-global) var(--border-radius-global) 0;
     padding: 1em 1.2em;
 }
 
@@ -388,7 +391,7 @@ button.next:active {
 
 .projectpreviewbutton {
     width: 100% !important;
-    border-radius: 0.6em;
+    border-radius: var(--border-radius-global);
     border: var(--widget-border);
     background-color: var(--widget-bg);
     color: var(--text-main);
@@ -412,7 +415,7 @@ button.next:active {
     overflow: hidden;
     transition: max-height 0.25s ease-out;
     background-color: var(--widget-bg);
-    border-radius: 0 0 0.6em 0.6em;
+    border-radius: 0 0 var(--border-radius-global) var(--border-radius-global);
     margin-bottom: 0 !important;
 }
 
@@ -457,6 +460,6 @@ button.next:active {
     overflow: hidden;
     transition: max-height 0.2s ease-out;
     background-color: #1e1e1e;
-    border-radius: 0.6em;
+    border-radius: var(--border-radius-global);
     margin-bottom: 0 !important;
 }
