@@ -239,7 +239,7 @@ a {
     width: auto;
     text-align: center;
     margin: 0 1em 0 1em;
-    filter: drop-shadow(1px 4px 6px rgb(43, 144, 184));
+    filter: drop-shadow(1px 4px 6px rgb(29, 69, 113));
     z-index: 15;
 }
 
@@ -253,7 +253,7 @@ a {
 
 .welcome-text h2 {
     margin: 0 !important;
-    font-size: clamp(16px, 2.2vw, 26px) !important;
+    font-size: clamp(16px, 2.3vw, 30px) !important;
     font-weight: 300;
     line-height: 1.5;
     color: #fff;
@@ -348,12 +348,17 @@ a {
 
 .reveal {
     position: relative;
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.js .reveal {
     transform: translateY(50px);
     opacity: 0;
     transition: 1s all ease;
 }
 
-.reveal.active {
+.js .reveal.active {
     transform: translateY(0);
     opacity: 1;
 }
@@ -560,7 +565,7 @@ a {
 
 @media (hover: hover) and (pointer: fine) {
     .skill-category-card:hover {
-        box-shadow: 0 0 0 2px var(--selected-brighter), 0 8px 24px rgba(0, 0, 0, 0.4);
+        /* box-shadow: 0 0 0 2px var(--selected-brighter), 0 8px 24px rgba(0, 0, 0, 0.4); */
     }
 }
 
@@ -796,7 +801,7 @@ a {
 
 .general-container .container .container-text h2 {
     margin: 0;
-    font-size: 26px;
+    font-size: 30px;
     font-weight: 300;
     line-height: 1.3;
     /* color: #fff; */
@@ -928,7 +933,7 @@ a {
     box-shadow: 0 0 0 2px var(--selected-brighter), 0 4px 16px rgba(0,0,0,0.35);
     border-radius: var(--border-radius-global);
     overflow: hidden;
-    transition: opacity 1s ease, transform 0.3s ease, box-shadow 0.1s ease;
+    transition: opacity 1s ease, transform 0.3s ease, box-shadow 0.3s ease !important;
     cursor: default;
     height: 270px;
 }
@@ -940,7 +945,7 @@ a {
 
 @media (hover: hover) and (pointer: fine) {
     .project:hover {
-        transform: translateY(-4px);
+        transform: translateY(-4px) !important;
         /* box-shadow: 0 0 0 1px rgba(255,255,255,0.15), 0 8px 24px rgba(0,0,0,0.5); */
         /* box-shadow: 0 0 0 3px var(--selected-brighter), 0 16px 59px rgb(171 229 255 / 12%); */
         box-shadow:
