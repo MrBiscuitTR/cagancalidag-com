@@ -561,6 +561,7 @@ a {
     flex-direction: column;
     transition: box-shadow 0.25s ease, opacity 1s ease, transform 1s ease;
     box-sizing: border-box;
+    min-width: 100%;
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -608,7 +609,7 @@ a {
     justify-content: left; /*was center. now aligned left but wrapped nicely*/
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 694px) {
     .skills-grid {
         grid-template-columns: 1fr;
         width: 90vw;
@@ -617,7 +618,7 @@ a {
     }
 }
 
-@media screen and (min-width: 601px) and (max-width: 960px) {
+@media screen and (min-width: 694px) and (max-width: 1024px) { /*960 1024 1302*/
     .skills-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -716,14 +717,20 @@ a {
     }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 694px) {
     .certifications {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media screen and (min-width: 694px) and (max-width: 1024px) { /*960 1024 1302*/
+    .certifications {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .general-container .container {
         padding: 1em 0.5em;
     }
@@ -818,6 +825,8 @@ a {
     line-height: 1.6;
     color: var(--text-main);
     padding: 0.2em 0 0.2em 0;
+    /*experimental fix for "By" in certifications*/
+    margin-top: auto;
 }
 
 .general-container .container img {
@@ -1055,7 +1064,7 @@ a {
     }
 }
 
-@media screen and (min-width: 601px) and (max-width: 960px) {
+@media screen and (min-width: 601px) and (max-width: 1024px) {
     .projects-grid {
         grid-template-columns: repeat(2, 1fr);
     }
