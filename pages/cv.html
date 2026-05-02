@@ -1,54 +1,376 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <script>if(location.protocol==="http:"&&!/^\d+\.\d+\.\d+\.\d+$/.test(location.hostname)&&location.hostname!=="localhost")location.replace("https:"+location.href.slice(5));</script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV | Çağan Efe Çalıdağ</title>
-    <script defer src="/js/fixAnchor.js"></script>
-    <link rel="stylesheet" href="/css/style-main.css">
-    <link rel="stylesheet" href="/css/cv.css">
-    <script defer src="https://kit.fontawesome.com/09fb08f3d8.js" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <script>if(location.protocol==="http:"&&!/^\d+\.\d+\.\d+\.\d+$/.test(location.hostname)&&location.hostname!=="localhost")location.replace("https:"+location.href.slice(5));</script>
+  <script src="/js/theme.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV — Çağan Efe Çalıdağ</title>
+  <link rel="icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/main.css">
+  <style>
+    .cv-page {
+      min-height: calc(100vh - 60px - 73px);
+      padding: 64px clamp(16px, 4vw, 48px) 80px;
+    }
+
+    .cv-inner {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .cv-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+
+    .cv-top h1 {
+      font-size: clamp(24px, 3.5vw, 36px);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+
+    .cv-top-meta {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 6px;
+      font-family: var(--mono);
+    }
+
+    .cv-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    /* version tabs */
+    .cv-tabs {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .cv-tab {
+      display: inline-flex;
+      align-items: center;
+      height: 34px;
+      padding: 0 14px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--text-muted);
+      font-size: 13px;
+      font-family: var(--mono);
+      cursor: pointer;
+      transition: all var(--transition);
+    }
+
+    .cv-tab.active {
+      background: var(--surface2);
+      border-color: var(--border-strong);
+      color: var(--accent);
+    }
+
+    @media (hover: hover) {
+      .cv-tab:hover:not(.active) {
+        border-color: var(--border-strong);
+        color: var(--text);
+      }
+    }
+
+    /* viewer */
+    .cv-viewer {
+      width: 100%;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--surface);
+    }
+
+    .cv-viewer iframe {
+      display: block;
+      width: 100%;
+      height: 82vh;
+      border: none;
+      min-height: 500px;
+    }
+
+    /* version history */
+    .cv-history {
+      margin-top: 28px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .cv-history-header {
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--border);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-family: var(--mono);
+    }
+
+    .cv-version-list {
+      list-style: none;
+    }
+
+    .cv-version-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--border);
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .cv-version-item:last-child { border-bottom: none; }
+
+    .cv-version-item.current {
+      background: var(--surface2);
+    }
+
+    .cv-version-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .cv-version-badge {
+      font-size: 10px;
+      font-family: var(--mono);
+      padding: 2px 8px;
+      border-radius: 99px;
+      border: 1px solid var(--border-strong);
+      color: var(--accent);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      flex-shrink: 0;
+    }
+
+    .cv-version-name {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    .cv-version-desc {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    .cv-version-actions {
+      display: flex;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .cv-version-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      height: 30px;
+      padding: 0 12px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--text-muted);
+      font-size: 12px;
+      font-family: var(--mono);
+      cursor: pointer;
+      text-decoration: none;
+      transition: all var(--transition);
+    }
+
+    @media (hover: hover) {
+      .cv-version-btn:hover {
+        border-color: var(--border-strong);
+        color: var(--text);
+      }
+    }
+
+    .cv-version-btn.primary {
+      background: var(--accent);
+      border-color: transparent;
+      color: #0b0f14;
+      font-weight: 600;
+    }
+
+    @media (hover: hover) {
+      .cv-version-btn.primary:hover { filter: brightness(1.1); }
+    }
+  </style>
+  <script defer src="/js/scroll.js"></script>
+  <script defer src="https://kit.fontawesome.com/09fb08f3d8.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="header" id="header">
-        <div class="header-image">
-            <a href="/"><img src="/files/images/icon-192.png" alt="cagancalidag icon"></a>
-        </div>
-        <div class="header-nav">
-            <nav>
-                <a href="/#about">About</a>
-                <a href="/#skills">Skills</a>
-                <a href="/#projects">Projects</a>
-                <a href="/pages/contact.html">Contact</a>
-            </nav>
-        </div>
+
+<header class="site-header" id="header">
+  <div class="header-inner">
+    <a class="header-logo" href="/">
+      <img src="/files/images/icon-192.png" alt="cagancalidag">
+      <span class="header-logo-text">cagancalidag<span>.</span>com</span>
+    </a>
+    <nav class="header-nav" id="main-nav">
+      <a href="/#about">
+        <span data-lang="en" class="lang-active">About</span>
+        <span data-lang="tr">Hakkımda</span>
+        <span data-lang="fr">À propos</span>
+      </a>
+      <a href="/#skills">
+        <span data-lang="en" class="lang-active">Skills</span>
+        <span data-lang="tr">Yetenekler</span>
+        <span data-lang="fr">Compétences</span>
+      </a>
+      <a href="/#projects">
+        <span data-lang="en" class="lang-active">Projects</span>
+        <span data-lang="tr">Projeler</span>
+        <span data-lang="fr">Projets</span>
+      </a>
+      <a href="/pages/contact.html">
+        <span data-lang="en" class="lang-active">Contact</span>
+        <span data-lang="tr">İletişim</span>
+        <span data-lang="fr">Contact</span>
+      </a>
+    </nav>
+    <div class="header-controls">
+      <button class="ctrl-btn lang-btn" id="lang-toggle" aria-label="Switch language">EN</button>
+      <button class="ctrl-btn" id="theme-toggle" aria-label="Toggle theme">◐</button>
+      <button class="ctrl-btn menu-toggle" id="menu-toggle" aria-label="Menu">☰</button>
     </div>
-    <div class="cv-wrapper">
-        <div class="cv-header-text">
-            <h1>Curriculum Vitae</h1>
-            <p>Latest version — 2024</p>
+  </div>
+</header>
+
+<div class="cv-page">
+  <div class="cv-inner">
+
+    <div class="cv-top reveal">
+      <div>
+        <span class="section-label">
+          <span data-lang="en" class="lang-active">Curriculum Vitae</span>
+          <span data-lang="tr">Özgeçmiş</span>
+          <span data-lang="fr">Curriculum Vitæ</span>
+        </span>
+        <h1>
+          <span data-lang="en" class="lang-active">Çağan Efe Çalıdağ</span>
+          <span data-lang="tr">Çağan Efe Çalıdağ</span>
+          <span data-lang="fr">Çağan Efe Çalıdağ</span>
+        </h1>
+        <div class="cv-top-meta">
+          <span data-lang="en" class="lang-active">latest version · 2024</span>
+          <span data-lang="tr">son sürüm · 2024</span>
+          <span data-lang="fr">version actuelle · 2024</span>
         </div>
-        <iframe src="/files/pdfs/Cagan_Efe_Calidag_CV.pdf"></iframe>
-        <section class="old-cvs">
-            <h2>Previous Versions</h2>
-            <ul>
-                <li><a href="/files/pdfs/Cagan_Efe_Calidag_CV.pdf" target="_blank" rel="noopener">CV 2024 — used to apply to universities abroad [PDF]</a></li>
-            </ul>
-        </section>
+      </div>
+      <div class="cv-actions">
+        <a class="btn btn-primary" href="/files/pdfs/Cagan_Efe_Calidag_CV.pdf" download>
+          <i class="fa fa-download"></i>
+          <span data-lang="en" class="lang-active">Download CV</span>
+          <span data-lang="tr">CV İndir</span>
+          <span data-lang="fr">Télécharger</span>
+        </a>
+        <a class="btn btn-outline" href="/files/pdfs/Cagan_Efe_Calidag_CV.pdf" target="_blank">
+          <span data-lang="en" class="lang-active">Open in new tab</span>
+          <span data-lang="tr">Yeni sekmede aç</span>
+          <span data-lang="fr">Ouvrir dans un onglet</span>
+        </a>
+      </div>
     </div>
-    <div class="footer">
-        <div class="footer-row">
-            <div class="footer-social">
-                <a href="https://www.linkedin.com/in/çağanefeçalıdağ" target="_blank"><i class="fa fa-linkedin-square"></i> LinkedIn</a> &nbsp;&nbsp;
-                <a href="https://github.com/MrBiscuitTR" target="_blank"><i class="fa fa-github"></i> GitHub</a> &nbsp;&nbsp;
-                <a href="https://www.instagram.com/cagancalidag/" target="_blank"><i class="fa fa-instagram"></i> Instagram</a> &nbsp;&nbsp;
-                <a href="https://www.twitter.com/Caganefe1" target="_blank"><i class="fa fa-twitter-square"></i> Twitter</a>
+
+    <!-- version selector tabs -->
+    <div class="cv-tabs reveal" id="cv-tabs">
+      <button class="cv-tab active" data-src="/files/pdfs/Cagan_Efe_Calidag_CV.pdf" data-label="2024 (latest)">2024 — latest</button>
+    </div>
+
+    <div class="cv-viewer reveal">
+      <iframe id="cv-iframe" src="/files/pdfs/Cagan_Efe_Calidag_CV.pdf" title="CV"></iframe>
+    </div>
+
+    <!-- version history -->
+    <div class="cv-history reveal">
+      <div class="cv-history-header">
+        <span data-lang="en" class="lang-active">Version history</span>
+        <span data-lang="tr">Sürüm geçmişi</span>
+        <span data-lang="fr">Historique des versions</span>
+      </div>
+      <ul class="cv-version-list">
+        <li class="cv-version-item current">
+          <div class="cv-version-left">
+            <span class="cv-version-badge">
+              <span data-lang="en" class="lang-active">current</span>
+              <span data-lang="tr">güncel</span>
+              <span data-lang="fr">actuel</span>
+            </span>
+            <div>
+              <div class="cv-version-name">CV 2024</div>
+              <div class="cv-version-desc">
+                <span data-lang="en" class="lang-active">Used to apply to universities abroad</span>
+                <span data-lang="tr">Yurt dışı üniversite başvurularında kullanıldı</span>
+                <span data-lang="fr">Utilisé pour les candidatures universitaires à l'étranger</span>
+              </div>
             </div>
-        </div>
-        <div class="copyright-bottom">
-            <p>© 2023<script>document.write("-", new Date().getFullYear());</script> <noscript>2024</noscript> Çağan Efe Çalıdağ, All rights reserved.</p>
-        </div>
+          </div>
+          <div class="cv-version-actions">
+            <a class="cv-version-btn" href="/files/pdfs/Cagan_Efe_Calidag_CV.pdf" target="_blank">
+              <span data-lang="en" class="lang-active">view</span>
+              <span data-lang="tr">görüntüle</span>
+              <span data-lang="fr">voir</span>
+            </a>
+            <a class="cv-version-btn primary" href="/files/pdfs/Cagan_Efe_Calidag_CV.pdf" download>
+              <i class="fa fa-download"></i>
+              <span data-lang="en" class="lang-active">download</span>
+              <span data-lang="tr">indir</span>
+              <span data-lang="fr">télécharger</span>
+            </a>
+          </div>
+        </li>
+      </ul>
     </div>
+
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-social">
+      <a href="https://www.linkedin.com/in/çağanefeçalıdağ" target="_blank" rel="noopener"><i class="fa fa-linkedin-square"></i> LinkedIn</a>
+      <a href="https://github.com/MrBiscuitTR" target="_blank" rel="noopener"><i class="fa fa-github"></i> GitHub</a>
+      <a href="https://www.instagram.com/cagancalidag/" target="_blank" rel="noopener"><i class="fa fa-instagram"></i> Instagram</a>
+      <a href="https://www.twitter.com/Caganefe1" target="_blank" rel="noopener"><i class="fa fa-twitter-square"></i> Twitter</a>
+    </div>
+    <span class="footer-copy">© 2023–<script>document.write(new Date().getFullYear())</script> Çağan Efe Çalıdağ</span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('menu-toggle').addEventListener('click', function() {
+    document.getElementById('main-nav').classList.toggle('open');
+  });
+
+  // tab switching — swap iframe src when user picks a version
+  document.querySelectorAll('.cv-tab').forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      document.querySelectorAll('.cv-tab').forEach(function(t) { t.classList.remove('active'); });
+      tab.classList.add('active');
+      var src = tab.getAttribute('data-src');
+      if (src) document.getElementById('cv-iframe').src = src;
+    });
+  });
+</script>
+
 </body>
 </html>

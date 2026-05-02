@@ -1,110 +1,122 @@
-<!-- Default template for all project presentation pages. -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <script>if(location.protocol==="http:"&&!/^\d+\.\d+\.\d+\.\d+$/.test(location.hostname)&&location.hostname!=="localhost")location.replace("https:"+location.href.slice(5));</script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script>document.title = "Project: "+decodeURI(window.location.pathname.split("/")[3].replace(".html",""))</script>
-    <link rel="stylesheet" href="/css/projects.css">
-    <link rel="stylesheet" href="/css/style-main.css">
-    <script defer src="../dynamicLoader.js"></script>
-    <script defer src="https://kit.fontawesome.com/09fb08f3d8.js" crossorigin="anonymous"></script>
-    <noscript><span style="background-color: rgb(201, 80, 10); width: 100%; height: 100%; margin: 0 auto 0 auto; text-align: center; display: block;">Please enable javascript for the best user experience! Most of the content will be invisible to you unless you enable it.</span></noscript>
+  <meta charset="UTF-8">
+  <script>if(location.protocol==="http:"&&!/^\d+\.\d+\.\d+\.\d+$/.test(location.hostname)&&location.hostname!=="localhost")location.replace("https:"+location.href.slice(5));</script>
+  <script src="../../../js/theme.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project: MFINUE Connect</title>
+  <link rel="icon" href="../../../favicon.ico">
+  <link rel="stylesheet" href="../../../css/main.css">
+  <link rel="stylesheet" href="../../../css/projects.css">
+  <script defer src="../dynamicLoader.js"></script>
+  <script defer src="https://kit.fontawesome.com/09fb08f3d8.js" crossorigin="anonymous"></script>
+  <noscript><span style="display:block;background:#c95010;padding:10px;text-align:center;font-size:14px;">Most content requires JavaScript. Please enable it.</span></noscript>
 </head>
 <body>
-    <div class="header">
-        <div class="header-image">
-            <a href="/"><img src="/files/images/icon-192.png" alt="cagancalidag icon"></a>
-        </div>
-        <div class="header-nav">
-            <nav>
-                <a href="/#about">About</a>
-                <a href="/#skills">Skills</a>
-                <a href="/#projects">Projects</a>
-                <!-- <a href="/cv">CV</a> -->
-                <a href="/pages/contact.html">Contact</a>
-            </nav>
-        </div>
+
+<header class="site-header" id="header">
+  <div class="header-inner">
+    <a class="header-logo" href="/">
+      <img src="../../../files/images/icon-192.png" alt="cagancalidag">
+      <span class="header-logo-text">cagancalidag<span>.</span>com</span>
+    </a>
+    <nav class="header-nav" id="main-nav">
+      <a href="/#about">About</a>
+      <a href="/#skills">Skills</a>
+      <a href="/#projects">Projects</a>
+      <a href="/pages/contact.html">Contact</a>
+    </nav>
+    <div class="header-controls">
+      <button class="ctrl-btn lang-btn" id="lang-toggle" aria-label="Switch language">EN</button>
+      <button class="ctrl-btn" id="theme-toggle" aria-label="Toggle theme">◐</button>
+      <button class="ctrl-btn menu-toggle" id="menu-toggle" aria-label="Menu">☰</button>
     </div>
-    <div class="project-page-container">
-        <h1 class="projectname">Project: <span class="projectname">MFINUE Connect</span></h1><!--<script>document.write(decodeURI(window.location.pathname.split("/")[3].replace(".html","")))</script>-->
-        <div class="modal"></div>
-        <div class="screenshot-slider">
-            <h2>Screenshots</h2>
-            <h3>Slide to see more pictures & click on an image for a better view!</h3>
-            <div class="screenshotswithbuttons">
-                <button class="prev">‹</button>
-                    <div class="screenshots">
-                        <img class="screenshot" src="files/connect_accueil.png" alt="connect_accueil">
-                        <img class="screenshot" src="files/connect_actualite.png" alt="connect_actualite">
-                        <img class="screenshot" src="files/connect_deroulement.png" alt="connect_deroulement">
-                        <img class="screenshot" src="files/connect_visite.png" alt="connect_visite">
-                        <img class="screenshot" src="files/connect_comite_details.png" alt="connect_comite_details">
-                        <img class="screenshot" src="files/connect_em_documents.png" alt="connect_em_documents">
-                        <img class="screenshot" src="files/connect_em_document_specific.png" alt="connect_em_document_specific">
-                        <img class="screenshot" src="files/connect_em_delegates.png" alt="connect_em_delegates">
-                        <img class="screenshot" src="files/connect_em_presence.png" alt="connect_em_presence">
-                        <img class="screenshot" src="files/connect_em_tallysheet.png" alt="connect_em_tallysheet">
-                        <img class="screenshot" src="files/connect_em_plannary.png" alt="connect_em_plannary">
-                        <img class="screenshot" src="files/connect_admin_docs.png" alt="connect_admin_docs">
-                        <img class="screenshot" src="files/connect_admin_document_specific.png" alt="connect_admin_document_specific">
-                        <img class="screenshot" src="files/connect_admin_users.png" alt="connect_admin_users">
-                        <img class="screenshot" src="files/connect_user_modify.png" alt="connect_user_modify">
-                        <img class="screenshot" src="files/connect_admin_committees.png" alt="connect_admin_committees">
-                        <img class="screenshot" src="files/connect_admin_committee_overview.png" alt="connect_admin_committee_overview">
-                        <img class="screenshot" src="files/connect_CIJ.png" alt="connect_CIJ">
-                        <img class="screenshot" src="files/connect_CIJ_settings.png" alt="connect_CIJ_settings">
-                        <img class="screenshot" src="files/connect_drivepicker.png" alt="connect_drivepicker">
-                    </div>
-                <button class="next">›</button>
-            </div>
-        </div>
-        <div class="project-infos">
-            <div class="info-panel project-description">
-                <h2>Description</h2>
-                <p> MFINUE Connect is a web portal, designed only to be used by predesignated users: the participants of the MFINUE<sup>*</sup> Conference, a francophone MUN conference held by Private Istanbul Saint-Joseph French High School. The event is organized by its
-                    students and advising teachers. The portal is designed to be a hub for all the necessary information, resources, and tools for the participants to use before, during, and after the conference. It includes a schedule, a list of committees, a list of documents, a page dedicated to the "international court of justice" simulation, a page for the "press" team, a page for the "Control panel" team (The selected adults consisting of teachers, advisors... responsible for correcting resolutions and demanding changes or accepting the documents), a page for the "general assembly", a page dedicated to cultural visits, and dedicated committee pages which inlude a tally sheet for counting points, a presence sheet, a list of documents of the committee and much more. The portal also includes a "Google Drive Picker" for the participants to easily upload their documents to the portal. The portal is designed to be simple, easy to navigate, and have all the necessary information and tools for the participants, advisors and organizers. 
-                    The project was started by Can Bora Ciner'24, the student head of IT of MFINUE for the 2022-2023 conference period, and kept up do date by the IT team of MFINUE. I, as a member of both the 2022-2023 and 2023-2024 IT teams, have contributed to the project by being the most active developer and designer of the project. I was responsible for adding new features, fixing bugs, educating the other team members on the utilization of the portal, the code base and database of the project, and keeping the project up to date. The project is still in use and will be used in the proceeding conferences. <br>
-                    <sup>*</sup><a target="_blank" href="https://mfinue.org">MFINUE</a>: Modèle Francophone International des Nations Unies en Eurasie
-                </p>
-            </div>
-            <div class="info-panel technical-info">
-                <h2>Technical Information</h2>
-                <ul>
-                    <li>Language(s): TypeScript, JavaScript, CSS</li>
-                    <li>Framework(s):  React (TSX)</li>
-                    <li>Database(s):  Firebase - Cloud Firestore & Storage</li>
-                    <li>Hosting:  Firebase</li>
-                </ul>
-                &nbsp;&nbsp;Other:
-                <ul>
-                    <li>Authentication - Firebase Email & Password, Google OAuth (For GAPI token acquisition) </li>
-                    <li>APIs - Google Drive Picker</li>
-                </ul>
-            </div>
-            <div class="info-panel project-links">
-                <h2>Links</h2>
-                <ul>
-                    <li><a target="_blank" href="https://dev.mfinue.org/outils/committee">Tools used for creating committees, tours, etc. (Also developed by us)</a></li>
-                    <li><a target="_blank" href="https://github.com/MFINUE">GitHub Repository (Hidden outside of organization)</a></li>
-                    <li><a target="_blank" href="https://connect.mfinue.org/">Live Demo (Private)</a></li>
-                </ul>
-            </div>
-        </div>
+  </div>
+</header>
+
+<div class="project-page-container">
+  <h1 class="projectname">Project: <span class="projectname">MFINUE Connect</span></h1>
+  <div class="modal"></div>
+
+  <div class="screenshot-slider">
+    <h2>Screenshots</h2>
+    <h3>Drag or use arrows · click to zoom</h3>
+    <div class="screenshotswithbuttons">
+      <button class="prev">‹</button>
+      <div class="screenshots">
+        <img class="screenshot" src="files/connect_accueil.png" alt="Accueil">
+        <img class="screenshot" src="files/connect_actualite.png" alt="Actualité">
+        <img class="screenshot" src="files/connect_deroulement.png" alt="Déroulement">
+        <img class="screenshot" src="files/connect_visite.png" alt="Visite">
+        <img class="screenshot" src="files/connect_comite_details.png" alt="Comité">
+        <img class="screenshot" src="files/connect_em_documents.png" alt="Documents">
+        <img class="screenshot" src="files/connect_em_document_specific.png" alt="Document">
+        <img class="screenshot" src="files/connect_em_delegates.png" alt="Délégués">
+        <img class="screenshot" src="files/connect_em_presence.png" alt="Présence">
+        <img class="screenshot" src="files/connect_em_tallysheet.png" alt="Tally">
+        <img class="screenshot" src="files/connect_em_plannary.png" alt="Plénier">
+        <img class="screenshot" src="files/connect_admin_docs.png" alt="Admin docs">
+        <img class="screenshot" src="files/connect_admin_document_specific.png" alt="Admin doc">
+        <img class="screenshot" src="files/connect_admin_users.png" alt="Admin users">
+        <img class="screenshot" src="files/connect_user_modify.png" alt="User modify">
+        <img class="screenshot" src="files/connect_admin_committees.png" alt="Committees">
+        <img class="screenshot" src="files/connect_admin_committee_overview.png" alt="Committee overview">
+        <img class="screenshot" src="files/connect_CIJ.png" alt="CIJ">
+        <img class="screenshot" src="files/connect_CIJ_settings.png" alt="CIJ settings">
+        <img class="screenshot" src="files/connect_drivepicker.png" alt="Drive Picker">
+      </div>
+      <button class="next">›</button>
     </div>
-    <div class="footer">
-        <div class="footer-row">
-            <div class="footer-social">
-                <a href="https://www.linkedin.com/in/çağanefeçalıdağ" target="_blank"><i class="fa fa-linkedin-square"></i> LinkedIn</a> &nbsp;&nbsp;
-                <a href="https://github.com/MrBiscuitTR" target="_blank"><i class="fa fa-github"></i> GitHub</a> &nbsp;&nbsp;
-                <a href="https://www.instagram.com/cagancalidag/" target="_blank"><i class="fa fa-instagram"></i> Instagram</a> &nbsp;&nbsp;
-                <a href="https://www.twitter.com/Caganefe1" target="_blank"><i class="fa fa-twitter-square"></i> Twitter</a>
-            </div>
-        </div>
-        <div class="copyright-bottom">
-            <p>© 2023<script>document.write("-", new Date().getFullYear());</script> <noscript>2024</noscript> Çağan Efe Çalıdağ, All rights reserved.</p>
-        </div>
+  </div>
+
+  <div class="project-infos">
+    <div class="info-panel project-description">
+      <h2>Description</h2>
+      <p>MFINUE Connect is a private web portal for participants of the <a href="https://mfinue.org" target="_blank" rel="noopener">MFINUE</a> conference — a francophone MUN held by Istanbul Saint-Joseph French High School. It serves as a hub for schedules, committee tools, documents, tally sheets, presence tracking, and a Google Drive Picker for uploads. Started by Can Bora Ciner '24, I joined as the most active developer across the 2022–2023 and 2023–2024 editions — adding features, fixing bugs, and training the team.</p>
     </div>
+    <div class="info-panel technical-info">
+      <h2>Technical Information</h2>
+      <ul>
+        <li>Language(s): TypeScript, JavaScript, CSS</li>
+        <li>Framework(s): React (TSX)</li>
+        <li>Database(s): Firebase — Cloud Firestore &amp; Storage</li>
+        <li>Hosting: Firebase</li>
+      </ul>
+      Other:
+      <ul>
+        <li>Authentication — Firebase Email &amp; Password, Google OAuth</li>
+        <li>APIs — Google Drive Picker</li>
+      </ul>
+    </div>
+    <div class="info-panel project-links">
+      <h2>Links</h2>
+      <ul>
+        <li><a href="https://dev.mfinue.org/outils/committee" target="_blank" rel="noopener">Committee tools (also developed by us)</a></li>
+        <li><a href="https://github.com/MFINUE" target="_blank" rel="noopener">GitHub (org-private)</a></li>
+        <li><a href="https://connect.mfinue.org/" target="_blank" rel="noopener">Live (private access)</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-social">
+      <a href="https://www.linkedin.com/in/çağanefeçalıdağ" target="_blank" rel="noopener"><i class="fa fa-linkedin-square"></i> LinkedIn</a>
+      <a href="https://github.com/MrBiscuitTR" target="_blank" rel="noopener"><i class="fa fa-github"></i> GitHub</a>
+      <a href="https://www.instagram.com/cagancalidag/" target="_blank" rel="noopener"><i class="fa fa-instagram"></i> Instagram</a>
+      <a href="https://www.twitter.com/Caganefe1" target="_blank" rel="noopener"><i class="fa fa-twitter-square"></i> Twitter</a>
+    </div>
+    <span class="footer-copy">© 2023–<script>document.write(new Date().getFullYear())</script> Çağan Efe Çalıdağ</span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('menu-toggle').addEventListener('click', function() {
+    document.getElementById('main-nav').classList.toggle('open');
+  });
+</script>
+
 </body>
 </html>

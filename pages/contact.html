@@ -1,59 +1,358 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | Çağan Efe Çalıdağ</title>
-    <link rel="stylesheet" href="../css/style-main.css">
-    <link rel="stylesheet" href="../css/contact.css">
-    <script defer src="https://kit.fontawesome.com/09fb08f3d8.js" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <script>if(location.protocol==="http:"&&!/^\d+\.\d+\.\d+\.\d+$/.test(location.hostname)&&location.hostname!=="localhost")location.replace("https:"+location.href.slice(5));</script>
+  <script src="/js/theme.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Çağan Efe Çalıdağ</title>
+  <meta name="description" content="Get in touch with Çağan Efe Çalıdağ.">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/main.css">
+  <style>
+    .contact-page {
+      min-height: calc(100vh - 60px - 73px);
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 72px clamp(16px, 4vw, 48px);
+    }
+
+    .contact-inner {
+      width: 100%;
+      max-width: 960px;
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    @media (max-width: 720px) {
+      .contact-inner { grid-template-columns: 1fr; gap: 40px; }
+    }
+
+    .contact-left h1 {
+      font-size: clamp(26px, 4vw, 38px);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      margin-bottom: 12px;
+    }
+
+    .contact-left p {
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 8px;
+    }
+
+    .contact-left .email-direct {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 20px;
+      padding: 10px 16px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      font-size: 14px;
+      font-family: var(--mono);
+      color: var(--accent);
+      text-decoration: none;
+      transition: border-color var(--transition);
+    }
+
+    @media (hover: hover) {
+      .contact-left .email-direct:hover { border-color: var(--border-strong); }
+    }
+
+    .contact-channels {
+      margin-top: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .contact-channel {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 14px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      text-decoration: none;
+      color: var(--text-muted);
+      font-size: 14px;
+      transition: border-color var(--transition), color var(--transition);
+    }
+
+    @media (hover: hover) {
+      .contact-channel:hover {
+        border-color: var(--border-strong);
+        color: var(--text);
+      }
+    }
+
+    .channel-icon {
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--radius-sm);
+      background: var(--surface2);
+      flex-shrink: 0;
+      font-size: 15px;
+      color: var(--accent);
+    }
+
+    .channel-label { font-weight: 500; color: var(--text); }
+    .channel-handle { font-size: 12px; font-family: var(--mono); margin-top: 1px; }
+
+    /* form */
+    .contact-form {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 28px 24px;
+    }
+
+    .form-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 20px;
+      letter-spacing: -0.01em;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      margin-bottom: 14px;
+    }
+
+    .form-group label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-family: var(--mono);
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 10px 12px;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      color: var(--text);
+      font-family: var(--sans);
+      font-size: 14px;
+      font-weight: 300;
+      transition: border-color var(--transition), box-shadow var(--transition);
+      outline: none;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-glow);
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: var(--text-faint);
+    }
+
+    .form-group textarea {
+      height: 120px;
+      resize: vertical;
+      min-height: 80px;
+      font-family: var(--sans);
+    }
+
+    .form-submit {
+      width: 100%;
+      height: 42px;
+      background: var(--accent);
+      color: #0b0f14;
+      border: none;
+      border-radius: var(--radius);
+      font-size: 14px;
+      font-weight: 600;
+      font-family: var(--sans);
+      cursor: pointer;
+      margin-top: 4px;
+      transition: filter var(--transition), transform var(--transition);
+      letter-spacing: 0.01em;
+    }
+
+    @media (hover: hover) {
+      .form-submit:hover {
+        filter: brightness(1.1);
+        transform: translateY(-1px);
+      }
+    }
+  </style>
+  <script defer src="/js/scroll.js"></script>
+  <script defer src="https://kit.fontawesome.com/09fb08f3d8.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="header" id="header">
-        <div class="header-image">
-            <a href="/"><img src="/files/images/icon-192.png" alt="cagancalidag icon"></a>
-        </div>
-        <div class="header-nav">
-            <nav>
-                <a href="/#about">About</a>
-                <a href="/#skills">Skills</a>
-                <a href="/#projects">Projects</a>
-                <a href="/pages/contact.html">Contact</a>
-            </nav>
-        </div>
+
+<header class="site-header" id="header">
+  <div class="header-inner">
+    <a class="header-logo" href="/">
+      <img src="/files/images/icon-192.png" alt="cagancalidag">
+      <span class="header-logo-text">cagancalidag<span>.</span>com</span>
+    </a>
+    <nav class="header-nav" id="main-nav">
+      <a href="/#about">
+        <span data-lang="en" class="lang-active">About</span>
+        <span data-lang="tr">Hakkımda</span>
+        <span data-lang="fr">À propos</span>
+      </a>
+      <a href="/#skills">
+        <span data-lang="en" class="lang-active">Skills</span>
+        <span data-lang="tr">Yetenekler</span>
+        <span data-lang="fr">Compétences</span>
+      </a>
+      <a href="/#projects">
+        <span data-lang="en" class="lang-active">Projects</span>
+        <span data-lang="tr">Projeler</span>
+        <span data-lang="fr">Projets</span>
+      </a>
+      <a href="/pages/contact.html">
+        <span data-lang="en" class="lang-active">Contact</span>
+        <span data-lang="tr">İletişim</span>
+        <span data-lang="fr">Contact</span>
+      </a>
+    </nav>
+    <div class="header-controls">
+      <button class="ctrl-btn lang-btn" id="lang-toggle" aria-label="Switch language">EN</button>
+      <button class="ctrl-btn" id="theme-toggle" aria-label="Toggle theme">◐</button>
+      <button class="ctrl-btn menu-toggle" id="menu-toggle" aria-label="Menu">☰</button>
     </div>
-    <div class="contact-wrapper" id="contactform">
-        <div class="contact-text">
-            <h1>Contact Me</h1>
-            <p>Fill the form below or email me at <a href="mailto:contact@cagancalidag.com">contact@cagancalidag.com</a> to contact me.</p>
-        </div>
-        <div class="contact-form-cool">
-            <form action="https://formspree.io/f/manwwqko" method="POST">
-                <label for="full-name">Full Name or Organization</label>
-                <input type="text" name="name" id="full-name" placeholder="Nancy Smith from Google LLC." required>
-                <label for="email-address">Email Address</label>
-                <input type="email" name="_replyto" id="email-address" placeholder="email@domain.tld" required>
-                <label for="subject">Subject</label>
-                <input name="subject" type="text" placeholder="Collaboration Opportunity">
-                <label for="message">Message</label>
-                <textarea name="message" id="message" placeholder="Your message. Do not include confidential information." required></textarea>
-                <input type="hidden" name="_subject" id="email-subject" value="Contact Form Submission">
-                <button type="submit">Send Message</button>
-            </form>
-        </div>
+  </div>
+</header>
+
+<div class="contact-page">
+  <div class="contact-inner">
+    <div class="contact-left reveal">
+      <span class="section-label">
+        <span data-lang="en" class="lang-active">Contact</span>
+        <span data-lang="tr">İletişim</span>
+        <span data-lang="fr">Contact</span>
+      </span>
+      <h1>
+        <span data-lang="en" class="lang-active">Let's talk.</span>
+        <span data-lang="tr">Konuşalım.</span>
+        <span data-lang="fr">Parlons-en.</span>
+      </h1>
+      <p>
+        <span data-lang="en" class="lang-active">I'm open to internship opportunities, collaborations, and interesting projects. Fill the form or reach out directly.</span>
+        <span data-lang="tr">Staj, iş birliği ve ilginç projeler için her zaman açığım. Formu doldurun ya da doğrudan ulaşın.</span>
+        <span data-lang="fr">Je suis ouvert aux stages, collaborations et projets intéressants. Remplissez le formulaire ou contactez-moi directement.</span>
+      </p>
+      <a class="email-direct" href="mailto:contact@cagancalidag.com">
+        <i class="fa fa-envelope"></i> contact@cagancalidag.com
+      </a>
+      <div class="contact-channels">
+        <a class="contact-channel" href="https://www.linkedin.com/in/çağanefeçalıdağ" target="_blank" rel="noopener">
+          <span class="channel-icon"><i class="fa fa-linkedin"></i></span>
+          <div>
+            <div class="channel-label">LinkedIn</div>
+            <div class="channel-handle">çağanefeçalıdağ</div>
+          </div>
+        </a>
+        <a class="contact-channel" href="https://github.com/MrBiscuitTR" target="_blank" rel="noopener">
+          <span class="channel-icon"><i class="fa fa-github"></i></span>
+          <div>
+            <div class="channel-label">GitHub</div>
+            <div class="channel-handle">MrBiscuitTR</div>
+          </div>
+        </a>
+        <a class="contact-channel" href="https://www.twitter.com/Caganefe1" target="_blank" rel="noopener">
+          <span class="channel-icon"><i class="fa fa-twitter"></i></span>
+          <div>
+            <div class="channel-label">Twitter / X</div>
+            <div class="channel-handle">@Caganefe1</div>
+          </div>
+        </a>
+      </div>
     </div>
-    <div class="footer">
-        <div class="footer-row">
-            <div class="footer-social">
-                <a href="https://www.linkedin.com/in/çağanefeçalıdağ" target="_blank"><i class="fa fa-linkedin-square"></i> LinkedIn</a> &nbsp;&nbsp;
-                <a href="https://github.com/MrBiscuitTR" target="_blank"><i class="fa fa-github"></i> GitHub</a> &nbsp;&nbsp;
-                <a href="https://www.instagram.com/cagancalidag/" target="_blank"><i class="fa fa-instagram"></i> Instagram</a> &nbsp;&nbsp;
-                <a href="https://www.twitter.com/Caganefe1" target="_blank"><i class="fa fa-twitter-square"></i> Twitter</a>
-            </div>
+
+    <div class="contact-form reveal">
+      <div class="form-title">
+        <span data-lang="en" class="lang-active">Send a message</span>
+        <span data-lang="tr">Mesaj gönder</span>
+        <span data-lang="fr">Envoyer un message</span>
+      </div>
+      <form action="https://formspree.io/f/manwwqko" method="POST">
+        <div class="form-group">
+          <label for="full-name">
+            <span data-lang="en" class="lang-active">Name or Organization</span>
+            <span data-lang="tr">Ad veya Kuruluş</span>
+            <span data-lang="fr">Nom ou organisation</span>
+          </label>
+          <input type="text" name="name" id="full-name" placeholder="Nancy Smith / Google LLC" required>
         </div>
-        <div class="copyright-bottom">
-            <p>© 2023<script>document.write("-", new Date().getFullYear());</script> <noscript>2024</noscript> Çağan Efe Çalıdağ, All rights reserved.</p>
+        <div class="form-group">
+          <label for="email-address">
+            <span data-lang="en" class="lang-active">Email</span>
+            <span data-lang="tr">E-posta</span>
+            <span data-lang="fr">E-mail</span>
+          </label>
+          <input type="email" name="_replyto" id="email-address" placeholder="you@domain.tld" required>
         </div>
+        <div class="form-group">
+          <label for="subject">
+            <span data-lang="en" class="lang-active">Subject</span>
+            <span data-lang="tr">Konu</span>
+            <span data-lang="fr">Sujet</span>
+          </label>
+          <input name="subject" type="text" id="subject" placeholder="Internship · Collaboration · Other">
+        </div>
+        <div class="form-group">
+          <label for="message">
+            <span data-lang="en" class="lang-active">Message</span>
+            <span data-lang="tr">Mesaj</span>
+            <span data-lang="fr">Message</span>
+          </label>
+          <textarea name="message" id="message" placeholder="Your message. Please don't include confidential information." required></textarea>
+        </div>
+        <input type="hidden" name="_subject" value="Contact Form Submission">
+        <button type="submit" class="form-submit">
+          <span data-lang="en" class="lang-active">Send message</span>
+          <span data-lang="tr">Gönder</span>
+          <span data-lang="fr">Envoyer</span>
+        </button>
+      </form>
     </div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-social">
+      <a href="https://www.linkedin.com/in/çağanefeçalıdağ" target="_blank" rel="noopener"><i class="fa fa-linkedin-square"></i> LinkedIn</a>
+      <a href="https://github.com/MrBiscuitTR" target="_blank" rel="noopener"><i class="fa fa-github"></i> GitHub</a>
+      <a href="https://www.instagram.com/cagancalidag/" target="_blank" rel="noopener"><i class="fa fa-instagram"></i> Instagram</a>
+      <a href="https://www.twitter.com/Caganefe1" target="_blank" rel="noopener"><i class="fa fa-twitter-square"></i> Twitter</a>
+    </div>
+    <span class="footer-copy">© 2023–<script>document.write(new Date().getFullYear())</script> Çağan Efe Çalıdağ</span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('menu-toggle').addEventListener('click', function() {
+    document.getElementById('main-nav').classList.toggle('open');
+  });
+</script>
+
 </body>
 </html>

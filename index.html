@@ -1,530 +1,1080 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <script>if(location.protocol==="http:"&&!/^\d+\.\d+\.\d+\.\d+$/.test(location.hostname)&&location.hostname!=="localhost")location.replace("https:"+location.href.slice(5));</script>
-        <script>document.documentElement.classList.add("js");</script>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Çağan Efe Çalıdağ | Full-Stack Developer & Technology Enthusiast</title>
-        <meta name="description" content="Çağan Efe Çalıdağ's Personal Website. Full-Stack Developer & Technology Enthusiast.">
-        <link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="192x192">
-        <link rel="apple-touch-icon" type="image/png" href="/files/images/icon-192.png" sizes="192x192">
-        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-        <link rel="manifest" href="/manifest.json">
-        <!-- all meta tags I could find for SEO -->
-        <meta property='og:title' content='Çağan Efe Çalıdağ | Full-Stack Developer & Technology Enthusiast'>
-        <meta property='og:type' content='website'>
-        <meta property="og:url" content="https://cagancalidag.com/">
-        <meta property="og:image" content="https://cagancalidag.com/files/images/og-image.jpg?v=2">
-        <meta property="og:site_name" content="Çağan Efe Çalıdağ | Developer">
-        <meta property="og:description" content="Portfolio of Çağan Efe Çalıdağ">
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content="Çağan Efe Çalıdağ | Full-Stack Developer & Technology Enthusiast">
-        <meta name="twitter:description" content="Çağan Efe Çalıdağ's Personal Website. Full-Stack Developer & Technology Enthusiast.">
-        <meta name="twitter:image" content="https://cagancalidag.com/files/images/og-image.jpg?v=2">
-        <meta name="twitter:creator" content="@Caganefe1" />
+<head>
+  <meta charset="UTF-8">
+  <script>if(location.protocol==="http:"&&!/^\d+\.\d+\.\d+\.\d+$/.test(location.hostname)&&location.hostname!=="localhost")location.replace("https:"+location.href.slice(5));</script>
+  <script src="js/theme.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Çağan Efe Çalıdağ — Full-Stack Developer</title>
+  <meta name="description" content="Çağan Efe Çalıdağ — Full-Stack Developer, automation enthusiast, and CS student at Université Paris-Saclay.">
+  <meta property="og:title" content="Çağan Efe Çalıdağ — Full-Stack Developer">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://cagancalidag.com/">
+  <meta property="og:image" content="https://cagancalidag.com/files/images/og-image.jpg?v=2">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:creator" content="@Caganefe1">
+  <meta name="author" content="Çağan Efe Çalıdağ">
+  <meta name="robots" content="INDEX, FOLLOW">
+  <link rel="icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="files/images/icon-192.png">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="stylesheet" href="css/main.css">
+  <style>
+    /* hero */
+    .hero {
+      position: relative;
+      min-height: calc(100vh - 60px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: var(--bg);
+    }
 
-        <meta name="keywords" content="Çağan Efe Çalıdağ, Cagan Efe Calidag, portfolio, cv, full-stack developer, technology" >
-        <meta name="author" content="Çağan Efe Çalıdağ" >
-        <meta name="robots" content="INDEX, FOLLOW">
-        <!-- <meta name="language" content="Turkish, English, French"> -->
-        <meta name="distribution" content="global">
-        <meta name="google" content="translate">
-        <script type="application/ld+json">
-            {
-              "@context" : "https://schema.org",
-              "@type" : "WebSite",
-              "name" : "Çağan Efe Çalıdağ | Developer",
-              "url" : "https://cagancalidag.com/", 
-              "alternateName": ["Çağan Efe Çalıdağ", "Cagan Efe Calidag", "cagan calidag", "Cagan Calidag", "cagan dev"]
-            }
-        </script>
-        <link rel="stylesheet" href="css/style-main.css">
-        <script defer src="js/scrollReveal.js"></script>
-        <script defer src="js/fixAnchor.js"></script>
-        <script defer src="https://kit.fontawesome.com/09fb08f3d8.js" crossorigin="anonymous"></script>
-        <script defer src="js/coolbg.js"></script>
-        <script defer src="js/main.js"></script>
-        <noscript><span style="background-color: rgb(201, 13, 10); width: 100%; min-height: 40px; margin: 0 auto 0 auto; text-align: center; display: block; border-radius: 0;">JavaScript is disabled. Content remains visible, but animations and interactive effects are turned off.</span></noscript>
-        
-    </head>
-    <body class="body">
-        <div class="header" id="header">
-            <div class="header-image">
-                <a href="/"><img src="/files/images/icon-192.png" alt="cagancalidag icon"></a>
-            </div>
-            <div class="header-nav">
-                <nav>
-                    <a data-value="About" onclick="goToAnchor('about')" >About</a>
-                    <a data-value="Skills" onclick="goToAnchor('skills')" >Skills</a>
-                    <a data-value="Projects" onclick="goToAnchor('projects')" >Projects</a>
-                    <!-- <a data-value="CV" class="anchor" href="/pages/cv.html">CV</a> -->
-                    <a data-value="Contact" class="anchor" href="/pages/contact.html">Contact</a>
-                </nav>
-            </div>
+    .rain-container {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    @keyframes wordRain {
+      0%   { transform: translateY(-20px); opacity: 0; }
+      8%   { opacity: 0.22; }
+      80%  { opacity: 0.12; }
+      100% { transform: translateY(calc(100vh + 20px)); opacity: 0; }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 40px 24px;
+    }
+
+    .hero-eyebrow {
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 18px;
+      display: block;
+    }
+
+    .hero-name {
+      font-size: clamp(38px, 7vw, 76px);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+      color: var(--text);
+      margin-bottom: 16px;
+    }
+
+    .hero-name span {
+      color: var(--accent);
+    }
+
+    .hero-tagline {
+      font-size: clamp(16px, 2.2vw, 22px);
+      font-weight: 300;
+      color: var(--text-muted);
+      margin-bottom: 36px;
+      line-height: 1.5;
+    }
+
+    .hero-tagline em {
+      font-style: normal;
+      color: var(--text);
+      font-weight: 400;
+    }
+
+    .hero-ctas {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      height: 42px;
+      padding: 0 20px;
+      border-radius: var(--radius);
+      font-size: 14px;
+      font-weight: 500;
+      font-family: var(--sans);
+      cursor: pointer;
+      transition: all var(--transition);
+      text-decoration: none;
+      border: none;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #0b0f14;
+    }
+
+    @media (hover: hover) {
+      .btn-primary:hover {
+        filter: brightness(1.1);
+        transform: translateY(-1px);
+      }
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--border-strong);
+    }
+
+    @media (hover: hover) {
+      .btn-outline:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+        transform: translateY(-1px);
+      }
+    }
+
+    .hero-scroll-hint {
+      position: absolute;
+      bottom: 28px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 11px;
+      font-family: var(--mono);
+      color: var(--text-faint);
+      letter-spacing: 0.08em;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .scroll-arrow {
+      width: 16px;
+      height: 16px;
+      border-right: 1px solid var(--text-faint);
+      border-bottom: 1px solid var(--text-faint);
+      transform: rotate(45deg);
+      animation: scrollBounce 1.8s ease-in-out infinite;
+    }
+
+    @keyframes scrollBounce {
+      0%, 100% { transform: rotate(45deg) translateY(0); opacity: 0.4; }
+      50% { transform: rotate(45deg) translateY(4px); opacity: 0.9; }
+    }
+
+    /* about */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    @media (max-width: 768px) {
+      .about-grid { grid-template-columns: 1fr; gap: 32px; }
+    }
+
+    .about-text p {
+      font-size: 16px;
+      font-weight: 300;
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin-bottom: 14px;
+    }
+
+    .about-text p:last-child { margin-bottom: 0; }
+
+    .stat-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin-top: 28px;
+    }
+
+    .stat {
+      background: var(--surface);
+      padding: 18px 14px;
+      text-align: center;
+    }
+
+    .stat-num {
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: -0.02em;
+      font-family: var(--mono);
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 11px;
+      color: var(--text-faint);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-top: 5px;
+    }
+
+    /* main content */
+    .main-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .section-header {
+      margin-bottom: 32px;
+    }
+
+    /* interests strip */
+    .interest-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 20px;
+    }
+
+    .interest-tag {
+      display: inline-flex;
+      align-items: center;
+      height: 26px;
+      padding: 0 10px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 99px;
+      font-size: 12px;
+      color: var(--text-muted);
+      font-family: var(--mono);
+    }
+
+    /* availability badge */
+    .availability {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 6px 14px;
+      border-radius: 99px;
+      border: 1px solid oklch(43.232% 0.13144 141.746 / 0.35);
+      background: oklch(66.633% 0.18835 141.725 / 0.07);
+      font-size: 12px;
+      color: oklch(75.313% 0.25169 142.105);
+      font-family: var(--mono);
+      letter-spacing: 0.04em;
+    }
+
+    .avail-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: oklch(75.313% 0.25169 142.105);
+      animation: pulse 2s ease-in-out infinite;
+      flex-shrink: 0;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.85); }
+    }
+  </style>
+  <script defer src="js/rain.js"></script>
+  <script defer src="js/scroll.js"></script>
+  <script defer src="js/collapsible.js"></script>
+  <script defer src="https://kit.fontawesome.com/09fb08f3d8.js" crossorigin="anonymous"></script>
+  <noscript><style>.js .reveal { opacity: 1 !important; transform: none !important; }</style></noscript>
+  <style>
+    #tweaks-panel {
+      display: none;
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 9999;
+      background: var(--surface);
+      border: 1px solid var(--border-strong);
+      border-radius: var(--radius);
+      padding: 16px 18px 18px;
+      width: 240px;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.4);
+      font-family: var(--sans);
+      font-size: 13px;
+      color: var(--text);
+    }
+    #tweaks-panel.visible { display: block; }
+    .tweak-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+    }
+    .tweak-header span {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .tweak-close {
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      font-size: 16px;
+      padding: 0;
+      line-height: 1;
+    }
+    .tweak-row {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      margin-bottom: 12px;
+    }
+    .tweak-row:last-child { margin-bottom: 0; }
+    .tweak-label {
+      font-size: 11px;
+      color: var(--text-muted);
+      font-family: var(--mono);
+      letter-spacing: 0.04em;
+    }
+    .tweak-row input[type=color] {
+      width: 100%;
+      height: 30px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      background: var(--bg2);
+      cursor: pointer;
+      padding: 2px 4px;
+    }
+    .tweak-row input[type=range] {
+      width: 100%;
+      accent-color: var(--accent);
+    }
+    .tweak-row select {
+      width: 100%;
+      height: 30px;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      color: var(--text);
+      font-family: var(--mono);
+      font-size: 12px;
+      padding: 0 8px;
+      cursor: pointer;
+    }
+    .tweak-divider {
+      height: 1px;
+      background: var(--border);
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header" id="header">
+  <div class="header-inner">
+    <a class="header-logo" href="/">
+      <img src="files/images/icon-192.png" alt="cagancalidag">
+      <span class="header-logo-text">cagancalidag<span>.</span>com</span>
+    </a>
+    <nav class="header-nav" id="main-nav">
+      <a onclick="goToAnchor('about')">
+        <span data-lang="en" class="lang-active">About</span>
+        <span data-lang="tr">Hakkımda</span>
+        <span data-lang="fr">À propos</span>
+      </a>
+      <a onclick="goToAnchor('skills')">
+        <span data-lang="en" class="lang-active">Skills</span>
+        <span data-lang="tr">Yetenekler</span>
+        <span data-lang="fr">Compétences</span>
+      </a>
+      <a onclick="goToAnchor('projects')">
+        <span data-lang="en" class="lang-active">Projects</span>
+        <span data-lang="tr">Projeler</span>
+        <span data-lang="fr">Projets</span>
+      </a>
+      <a href="/pages/contact.html">
+        <span data-lang="en" class="lang-active">Contact</span>
+        <span data-lang="tr">İletişim</span>
+        <span data-lang="fr">Contact</span>
+      </a>
+    </nav>
+    <div class="header-controls">
+      <button class="ctrl-btn lang-btn" id="lang-toggle" aria-label="Switch language">EN</button>
+      <button class="ctrl-btn" id="theme-toggle" aria-label="Toggle theme">◐</button>
+      <button class="ctrl-btn menu-toggle" id="menu-toggle" aria-label="Menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<!-- hero -->
+<section class="hero">
+  <div class="rain-container"></div>
+  <div class="hero-content">
+    <span class="hero-eyebrow">
+      <span data-lang="en" class="lang-active">Full-Stack Developer & CS Student</span>
+      <span data-lang="tr">Full-Stack Geliştirici & Bilgisayar Bilimi Öğrencisi</span>
+      <span data-lang="fr">Développeur Full-Stack & Étudiant en Informatique</span>
+    </span>
+    <h1 class="hero-name">Çağan Efe<br><span>Çalıdağ</span></h1>
+    <p class="hero-tagline">
+      <span data-lang="en" class="lang-active">Building things that <em>actually work</em>. Privacy-first, automation-heavy,<br>always learning.</span>
+      <span data-lang="tr">Gerçekten çalışan şeyler yapıyorum. Gizlilik odaklı, otomasyon ağırlıklı.</span>
+      <span data-lang="fr">Je construis des choses qui <em>fonctionnent vraiment</em>. Axé vie privée, automatisation.</span>
+    </p>
+    <div class="hero-ctas">
+      <a href="/pages/contact.html" class="btn btn-primary">
+        <span data-lang="en" class="lang-active">Get in touch</span>
+        <span data-lang="tr">İletişime geç</span>
+        <span data-lang="fr">Me contacter</span>
+      </a>
+      <a onclick="goToAnchor('projects')" class="btn btn-outline" style="cursor:pointer">
+        <span data-lang="en" class="lang-active">See my work</span>
+        <span data-lang="tr">Projelerime bak</span>
+        <span data-lang="fr">Voir mes projets</span>
+      </a>
+      <a href="/pages/cv.html" class="btn btn-outline">CV</a>
+    </div>
+  </div>
+  <div class="hero-scroll-hint">
+    <div class="scroll-arrow"></div>
+  </div>
+</section>
+
+<main class="main-content">
+
+  <!-- about -->
+  <div class="section-divider"></div>
+  <section class="section-block reveal" id="about">
+    <div class="section-header">
+      <span class="section-label">
+        <span data-lang="en" class="lang-active">About</span>
+        <span data-lang="tr">Hakkımda</span>
+        <span data-lang="fr">À propos</span>
+      </span>
+      <h2 class="section-title">
+        <span data-lang="en" class="lang-active">Who I am</span>
+        <span data-lang="tr">Ben kimim</span>
+        <span data-lang="fr">Qui je suis</span>
+      </h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>
+          <span data-lang="en" class="lang-active">Hello! My name is Çağan Efe Çalıdağ, but I prefer to be called Çağan. I am a <script>document.write(Math.floor((new Date()-new Date("2006-10-12"))/(365.25*24*60*60*1000)))</script> year old full-stack developer, designer and technology enthusiast. I am currently a Math-Info (Mathematics &amp; Computer Science) undergraduate student at <a class="inline-link" href="https://www.universite-paris-saclay.fr/en" target="_blank">Université Paris-Saclay.</a> (Click <a class="inline-link" href="/pages/projects/n8n/uni-grades" target="_blank">here</a> to see my grades, updated automatically through n8n every few days.) I have been "programming" since the age of 10, but I started taking it more seriously when I was 12 and I have been learning and developing my skills ever since.</span>
+          <span data-lang="tr">Merhaba! Adım Çağan Efe Çalıdağ, ama Çağan diye çağrılmayı tercih ederim. <script>document.write(Math.floor((new Date()-new Date("2006-10-12"))/(365.25*24*60*60*1000)))</script> yaşında bir full-stack geliştirici, tasarımcı ve teknoloji meraklısıyım. Şu an <a class="inline-link" href="https://www.universite-paris-saclay.fr/en" target="_blank">Paris-Saclay Üniversitesi</a>'nde Matematik-Bilgisayar Bilimleri lisans öğrencisiyim.</span>
+          <span data-lang="fr">Bonjour ! Je m'appelle Çağan Efe Çalıdağ, mais je préfère qu'on m'appelle Çağan. Je suis développeur full-stack, designer et passionné de technologie, âgé de <script>document.write(Math.floor((new Date()-new Date("2006-10-12"))/(365.25*24*60*60*1000)))</script> ans. Je suis actuellement étudiant en Mathématiques-Informatique à <a class="inline-link" href="https://www.universite-paris-saclay.fr/en" target="_blank">l'Université Paris-Saclay</a>.</span>
+        </p>
+        <p>
+          <span data-lang="en" class="lang-active">I have experience in various programming languages, frameworks and tools. I am also familiar with some design tools to help me with web development. I am currently working on numerous projects, and I am looking for potential collaboration or internship opportunities to gain experience and improve my skills. I am a very curious person, and I love learning new things. Being a very hard-working and solution-oriented person, I love taking on challenges and solving problems. My innovative and creative thinking skills help me to come up with unique solutions to problems.</span>
+          <span data-lang="tr">Çeşitli programlama dilleri, framework'ler ve araçlarda deneyimim var. Aynı zamanda web geliştirme süreçlerinde kullandığım bazı tasarım araçlarına da hakimim. Şu an birçok proje üzerinde çalışıyorum ve deneyim kazanmak için iş birliği veya staj fırsatları arıyorum.</span>
+          <span data-lang="fr">J'ai de l'expérience dans divers langages de programmation, frameworks et outils. Je cherche actuellement des opportunités de collaboration ou de stage pour gagner en expérience.</span>
+        </p>
+        <p>
+          <span data-lang="en" class="lang-active">Nowadays, I am mostly interested in automation and AI integrated full-stack development. I also care deeply about data privacy, so many of my recent projects prioritize no data collection, local deployment, self-hostability and offline use. The project I am focused on as of 2026 is <a class="inline-link" href="https://github.com/MrBiscuitTR/P.O.T.A.T.O" target="_blank">P.O.T.A.T.O</a>, a locally running and vocal AI tool operator with a web GUI and many useful tools to help automate anything. It is also open-source!</span>
+          <span data-lang="tr">Son zamanlarda özellikle otomasyon ve yapay zeka entegreli full-stack ve mobil uygulama geliştirmeyle ilgileniyorum. Veri gizliliğine önem veriyorum; projelerim mümkün olduğunca az telemetri, yerel çalışma ve self-hosting öncelikli. 2026 itibarıyla odaklandığım proje <a class="inline-link" href="https://github.com/MrBiscuitTR/P.O.T.A.T.O" target="_blank">P.O.T.A.T.O</a>.</span>
+          <span data-lang="fr">Je m'intéresse principalement au développement full-stack avec intégration IA et automatisation. La confidentialité des données est importante pour moi. Mon projet principal en 2026 est <a class="inline-link" href="https://github.com/MrBiscuitTR/P.O.T.A.T.O" target="_blank">P.O.T.A.T.O</a>, open-source.</span>
+        </p>
+        <p>
+          <span data-lang="en" class="lang-active">I am currently looking for a potential collaboration or internship opportunity. <a class="inline-link" href="/pages/contact.html">Let's talk.</a></span>
+          <span data-lang="tr">Staj veya iş birliği fırsatları arıyorum. <a class="inline-link" href="/pages/contact.html">Konuşalım.</a></span>
+          <span data-lang="fr">Je cherche un stage ou une opportunité de collaboration. <a class="inline-link" href="/pages/contact.html">Parlons-en.</a></span>
+        </p>
+        <div class="interest-strip">
+          <span class="interest-tag">AI agents</span>
+          <span class="interest-tag">automation</span>
+          <span class="interest-tag">privacy</span>
+          <span class="interest-tag">self-hosting</span>
+          <span class="interest-tag">full-stack</span>
+          <span class="interest-tag">open-source</span>
         </div>
-        <section>
-            <div class="welcome-bg">
-                <div class="background-container">
-                    
-                    <div class="contentwelcome">
-                        
-                        <div class="welcome">
-                            
-                            <div class="welcome-text">
-                                <div class="wt-text">
-                                    
-                                    <h1 data-value="Çağan Efe Çalıdağ">Çağan Efe Çalıdağ</h1>
-                                    <div class="welcome-seperator-horizontal"><hr></div>
-                                    <h2>Full-Stack Developer, <br> Technology Enthusiast. </h2>
-                                    
-                                </div>
-                            </div>
-                            <div class="welcome-image">
-                                <img src="files/images/welcomeimage.png" alt="Çağan Efe Çalıdağ ve Nehir">
-                                
-                            </div>
-                            <div class="raining-text"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-        </section>
-        <div class="general-container">
-            <noscript>JavaScript is disabled. Content is visible without animated reveal effects.</noscript>
-            <i class="fas fa-angle-down"></i>
-            <div class="reveal">
-                <div class="container" id="about">
-                    <div class="container-text">
-                        <h2 data-value="About Me">About me</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="reveal">
-                <div class="container">
-                    <!-- <div class="container-image">
-                        <img src="files/images/header-image.jpeg" alt="Çağan Efe Çalıdağ Profile Close">
-                    </div> -->
-                    <div class="container-text aboutme">
-                        <p>Hello! My name is Çağan Efe Çalıdağ, but I prefer to be called Çağan. I am a 
-                            <script>
-                            var birthDate = new Date("2006-10-12");
-                            var today = new Date();
-                            var age = Math.floor((today-birthDate) / (365.25 * 24 * 60 * 60 * 1000));
-                            {
-                                document.write(age);
-                            }
-                            </script> 
-                            year old full-stack developer, designer and technology enthusiast. I am currently a Math-Info (Mathematics & Computer Science) undergraduate student at <a href="https://www.universite-paris-saclay.fr/en" target="_blank">Université Paris-Saclay. </a> (Click <a href="/pages/projects/n8n/uni-grades" target="_blank">here</a> to see my grades, updated automatically through n8n every few days.)
-                            I have been "programming" since the age of 10, but I started taking it more seriously when I was 12 and I have been learning and developing my skills ever since. 
-                            I have experience in various programming languages, frameworks and tools. I am also familiar with some design tools to help me with web development.
-                            I am currently working on numerous projects, and I am looking for a potential collaboration or internship opportunities to gain experience and improve my skills. 
-                            I am a very curious person, and I love learning new things. Being a very hard-working and solution-oriented person, I love taking on challenges and solving problems. My innovative and creative thinking skills help me to come up with unique solutions to problems.
-                            Nowadays, I am mostly interested in automation and AI integrated full-stack and mobile app development. I also love data privacy, thus many of my recent projects (as of 2025)
-                            prioritize little to no telemetry/data collection, local deployment, self-hostability (if online) and offline use. The project I am focused on as of 2026 is <a href="https://github.com/MrBiscuitTR/P.O.T.A.T.O" target="_blank">P.O.T.A.T.O </a>, A locally running and vocal AI tool operator with a web GUI and many useful tools. 
-                            It is also open-source!
-                        </p>
-                        <!-- <h2> </h2> -->
-                    </div>
-                </div>
-            </div>
-            <div class="reveal">
-                <div class="container" id="skills">
-                    <div class="container-text">
-                        <h2 data-value="Skills">Skills</h2>
-                    </div>
-                </div>
-            </div>
-            <section class="skills-grid-section">
-                <div class="skills-grid">
-
-                    <div class="skill-category-card reveal">
-                        <h3 class="skill-cat-title">Languages</h3>
-                        <div class="skill-cat-body">
-                            <div class="skill">JavaScript</div>
-                            <div class="skill">TypeScript</div>
-                            <div class="skill">HTML</div>
-                            <div class="skill">CSS &amp; Tailwind</div>
-                            <div class="skill">SQL</div>
-                            <div class="skill">Java</div>
-                            <div class="skill">C# &amp; Unity</div>
-                            <div class="skill">C++</div>
-                            <div class="skill">Rust (beginner)</div>
-                            <div class="skill collapsible">Python </div>
-                            <div class="content">
-                                <div class="skill">flask</div>
-                                <div class="skill">pandas</div>
-                                <div class="skill">numpy</div>
-                                <div class="skill">sklearn</div>
-                                <div class="skill">opencv-python</div>
-                                <div class="skill">matplotlib</div>
-                                <div class="skill">bs4</div>
-                                <div class="skill">requests</div>
-                                <div class="skill">urllib</div>
-                                <div class="skill">math</div>
-                                <div class="skill">sys</div>
-                                <div class="skill">os</div>
-                                <div class="skill">json</div>
-                                <div class="skill">Misc: random, datetime...</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="skill-category-card reveal">
-                        <h3 class="skill-cat-title">Frameworks &amp; Runtime</h3>
-                        <div class="skill-cat-body">
-                            <div class="skill">React</div>
-                            <div class="skill">Svelte 5</div>
-                            <div class="skill">Flask</div>
-                            <div class="skill">Node.js</div>
-                            <div class="skill">REST APIs</div>
-                            <div class="skill">Modular Programming</div>
-                        </div>
-                    </div>
-
-                    <div class="skill-category-card reveal">
-                        <h3 class="skill-cat-title">AI &amp; Automation</h3>
-                        <div class="skill-cat-body">
-                            <div class="skill">AI Agents &amp; Orchestration</div>
-                            <div class="skill">MCP</div>
-                            <div class="skill">AI Prompt Engineering</div>
-                            <div class="skill">Ollama</div>
-                            <div class="skill">n8n</div>
-                            <div class="skill">OpenAI-compatible API</div>
-                            <div class="skill collapsible">Python AI & ML libs </div>
-                            <div class="content">
-                                <div class="skill">transformers</div>
-                                <div class="skill">diffusers</div>
-                                <div class="skill">torch</div>
-                                <div class="skill">bitsandbytes</div>
-                                <div class="skill">ollama-python</div>
-                                <div class="skill">fastmcp</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="skill-category-card reveal">
-                        <h3 class="skill-cat-title">Tools &amp; Software</h3>
-                        <div class="skill-cat-body">
-                            <div class="skill">Git &amp; GitHub</div>
-                            <div class="skill">VS Code</div>
-                            <div class="skill">Docker/Compose</div>
-                            <div class="skill">Caddy</div>
-                            <div class="skill">Claude Code</div>
-                            <div class="skill">OpenClaw</div>
-                            <div class="skill">Figma</div>
-                            <div class="skill">Adobe Photoshop (beginner)</div>
-                            <div class="skill">Blender (beginner)</div>
-                        </div>
-                    </div>
-
-                    <div class="skill-category-card reveal">
-                        <h3 class="skill-cat-title">Databases</h3>
-                        <div class="skill-cat-body">
-                            <div class="skill">MongoDB</div>
-                            <div class="skill">MySQL</div>
-                            <div class="skill">PostgreSQL</div>
-                            <div class="skill">Adminer</div>
-                            <div class="skill">Firebase (Firestore, storage, auth)</div>
-                            <div class="skill">Pinecone</div>
-                            <div class="skill">Weaviate</div>
-                        </div>
-                    </div>
-
-                    <div class="skill-category-card reveal">
-                        <h3 class="skill-cat-title">Infrastructure &amp; Security</h3>
-                        <div class="skill-cat-body">
-                            <div class="skill">Linux</div>
-                            <div class="skill">Windows</div>
-                            <div class="skill">OS Installation & Configuration</div>
-                            <div class="skill">Server Hardening</div>
-                            <div class="skill">Networking &amp; VPNs</div>
-                            <div class="skill">Firewalls (ufw, iptables)</div>
-                            <div class="skill">Port Security</div>
-                            <div class="skill">Domain Management</div>
-                            <div class="skill">Cloud Services (Google)</div>
-                        </div>
-                    </div>
-
-                    <div class="skill-category-card reveal">
-                        <h3 class="skill-cat-title">Soft Skills</h3>
-                        <div class="skill-cat-body">
-                            <div class="skill">Leadership</div>
-                            <div class="skill">Communication Skills</div>
-                            <div class="skill">Problem-Solving</div>
-                            <div class="skill">Analytical Thinking</div>
-                            <div class="skill">Innovative Thinking</div>
-                            <div class="skill"><span style="text-decoration: line-through;">Time Management</span>&nbsplmao no</div>
-                            <div class="skill">Teamwork</div>
-                            <div class="skill">Peer-to-Peer Learning</div>
-                            <div class="skill">Teaching</div>
-                        </div>
-                    </div>
-
-                </div>
-            </section>
-
-            <div class="reveal">
-                <div class="container" id="certifications">
-                    <div class="container-text">
-                        <h2 data-value="Certifications">Certifications</h2>
-                    
-                        <br>
-                        <div class="certifications">
-                            <div class="reveal cert">
-                                <div class="cert-item" onclick="window.open('/files/pdfs/TI MFINUE 2023 Certificat.pdf', '_blank')">
-                                    <img src="/files/images/MFINUE1-300x300.png" alt="MFINUE Certificate">
-                                    <div class="cert-text">
-                                        <h3>MFINUE 2023 IT Team Member</h3>
-                                        <p>By <a href="https://mfinue.org" target="_blank" onclick="event.stopPropagation()">MFINUE</a></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="reveal cert">
-                                <div class="cert-item" onclick="window.open('/files/pdfs/TI MFINUE 2024.pdf.pdf', '_blank')">
-                                    <img src="/files/images/MFINUE1-300x300.png" alt="MFINUE Certificate">
-                                    <div class="cert-text">
-                                        <h3>MFINUE 2024 IT Team Member <p style="font-size: 12px;"><i>Further Developed and Led Development of MFINUE Connect</i></p></h3>
-                                        <p>By <a href="https://mfinue.org" target="_blank" onclick="event.stopPropagation()">MFINUE</a></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="reveal cert">
-                                <div class="cert-item" onclick="window.open('/files/pdfs/20241128_GAEL_attestation_réussite_CALIDAG_Cagan Efe.pdf', '_blank')">
-                                    <img src="/files/images/France_Éducation_international_logo_2024.svg" alt="DALF C1 Certificate">
-                                    <div class="cert-text">
-                                        <h3>DALF C1 Level French</h3>
-                                        <p>By <a href="https://www.france-education-international.fr/" target="_blank" onclick="event.stopPropagation()">France Éducation</a></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="reveal cert">
-                                <div class="cert-item" onclick="window.open('/files/pdfs/Cagan_Efe_Calidag_IELTS_TRF_noid_censored.pdf', '_blank')">
-                                    <img src="/files/images/IELTS_logo.svg" alt="IELTS Certificate">
-                                    <div class="cert-text">
-                                        <h3>IELTS C1+ Level English</h3>
-                                        <p>By <a href="https://www.britishcouncil.org" target="_blank" onclick="event.stopPropagation()">British Council</a></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="reveal cert">
-                                <div class="cert-item" onclick="window.open('/files/pdfs/AP_Scholar_with_honor.pdf', '_blank')">
-                                    <img src="https://atlas.collegeboard.org/apricot/prod/4.7.1/assets/apple-touch-icon.png" alt="IELTS Certificate">
-                                    <div class="cert-text">
-                                        <h3>AP® Scholar with Honor Award <p style="font-size: 12px;"><i>4 x 5's In a Single Year: CS A, Calc BC, Physics C, Physics 1</i></p></h3>
-                                        <p>By <a href="https://www.collegeboard.org/" target="_blank" onclick="event.stopPropagation()">College Board</a></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="reveal">
-                <div class="container">
-                    <div class="container-text">
-                        <p>I really only learn programming languages, frameworks and other technology related things in order to use them for personal or collaborative projects, rather 
-                            than use them for my <a href="/pages/cv.html">CV</a>. Therefore you won't be seeing any programming language certificates in here for a while. You can however visit the pages I made for my projects
-                            where I explained which frameworks, services and languages I used, while also providing some screenshots in case you don&apos;t want to sign in to see their content.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="reveal">
-                <div class="container" id="projects">
-                    <div class="container-text">
-                        <h2 data-value="Some of My Projects">Some of My Projects</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="reveal">
-                <div class="container">
-                    <div class="container-text">
-                        <p>Click on a project to learn more about it!</p>
-                    </div>
-                </div>
-            </div>
-            <section class="projects-grid-section">
-                <div class="projects-grid">
-                    <div class="project reveal">
-                        <a href="/pages/projects/Metaclass/index.html">
-                            <div class="project-image">
-                                <img src="files/images/projects/metaclass/logo192-metaclass.png" alt="Metaclass Education">
-                            </div>
-                        </a>
-                        <a href="/pages/projects/Metaclass/index.html" class="project-text">
-                            <h2>Metaclass</h2>
-                            <h3>Organized Education App</h3>
-                            <p>Metaclass is a website that I made for my school to utilize. It helps teachers organize lesson materials and serve them to students.</p>
-                        </a>
-                    </div>
-                    <div class="project reveal">
-                        <a href="/pages/projects/Hanımcılar/index.html">
-                            <div class="project-image">
-                                <img src="/files/images/projects/hanimcilar/logo192-hanimcilar.png" alt="Hanımcılar Logo">
-                            </div>
-                        </a>
-                        <a href="/pages/projects/Hanımcılar/index.html" class="project-text">
-                            <h2>Hanımcılar</h2>
-                            <h3>Polaroid Photo Album</h3>
-                            <p>Hanımcılar is a website (which I made for my first, now ex gf) where you can create collaborative polaroid photo albums with changeable themes. It was originally static, but I later added a backend to allow for user accounts and collaboration.</p>
-                        </a>
-                    </div>
-                    <div class="project reveal">
-                        <a href="/pages/projects/MFINUE Connect/index.html">
-                            <div class="project-image">
-                                <img src="/files/images/subject-connect.jpg" alt="MFINUE Connect">
-                            </div>
-                        </a>
-                        <a href="/pages/projects/MFINUE Connect/index.html" class="project-text">
-                            <h2>MFINUE Connect</h2>
-                            <h3>MUN Conference Portal</h3>
-                            <p>MFINUE Connect is a portal that all the organizers, participants and advisors of a french MUN conference use during the conference to make life easier.</p>
-                        </a>
-                    </div>
-                    <div class="project reveal">
-                        <a href="/pages/projects/Utilities/index.html">
-                            <div class="project-image">
-                                <img src="/files/images/projects/Utilities/utilities-192.png" alt="Independent Utilities">
-                            </div>
-                        </a>
-                        <a href="/pages/projects/Utilities/index.html" class="project-text">
-                            <h2>Utilities</h2>
-                            <h3>Independent Utilities for Personal Use</h3>
-                            <p>I started developing these tools (more incoming!) in order to never need 3rd party websites for things that can be done independently.</p>
-                        </a>
-                    </div>
-                    <div class="project reveal">
-                        <a href="https://twoplace.cagancalidag.com" target="_blank" rel="noopener noreferrer">
-                            <div class="project-image">
-                                <img src="/files/images/projects/TwoPlace/twoplace-192.png" alt="TwoPlace - Innovative Video Call Platform">
-                            </div>
-                        </a>
-                        <a href="https://twoplace.cagancalidag.com" target="_blank" rel="noopener noreferrer" class="project-text">
-                            <h2>TwoPlace</h2>
-                            <h3>Innovative Video Call Platform</h3>
-                            <p>TwoPlace is a web-based video call app designed primarily for couples who want a secure, minimal, data-friendly and intimate long-distance video chat app.</p>
-                        </a>
-                    </div>
-                    <div class="project reveal">
-                        <a href="https://consulted.cagancalidag.com/" target="_blank">
-                            <div class="project-image">
-                                <img src="files/images/projects/ConsultEd/png/consulted_favicon-192.png" alt="ConsultED">
-                            </div>
-                        </a>
-                        <a href="https://consulted.cagancalidag.com/" target="_blank" class="project-text">
-                            <h2>ConsultED</h2>
-                            <h3>Organized & AI Integrated Consultancy</h3>
-                            <p>An all-inclusive website for consulting experienced consultants to apply to EU universities, from turkey. It is supported by AI (Gemini) and is organized with subscription plans.</p>
-                        </a>
-                    </div>
-                    <div class="project reveal">
-                        <a href="https://github.com/MrBiscuitTR/P.O.T.A.T.O" target="_blank">
-                            <div class="project-image">
-                                <img src="/files/images/projects/POTATO/favicon.png" alt="P.O.T.A.T.O">
-                            </div>
-                        </a>
-                        <a href="https://github.com/MrBiscuitTR/P.O.T.A.T.O" target="_blank" class="project-text">
-                            <h2>P.O.T.A.T.O</h2>
-                            <h3>Local AI Agent</h3>
-                            <p>A <u>local</u> and vocal AI tool operator with a GUI and many useful tools, both online and offline. Requires good hardware with high VRAM.</p>
-                        </a>
-                    </div>
-                    <div class="project reveal">
-                        <a href="/">
-                            <div class="project-image">
-                                <img src="/files/images/projects/n8n/n8n.png" alt="n8n Workflows">
-                            </div>
-                        </a>
-                        <a href="/" class="project-text">
-                            <h2>Multiple n8n Workflows</h2>
-                            <h3>All of which are useful</h3>
-                            <p>All these workflows have specific use scenarios and have saved me so much time, personally. I try to stay local, and privacy-focused.</p>
-                        </a>
-                    </div>
-                    <div class="project reveal">
-                        <a href="/">
-                            <div class="project-image">
-                                <img src="/files/images/projects/mcserver/minecrafticon.png" alt="Minecraft Server">
-                            </div>
-                        </a>
-                        <a href="/" class="project-text">
-                            <h2>Hosting a Minecraft Server</h2>
-                            <h3>Hardening, VPN tunnel, ufw, careful forwarding</h3>
-                            <p>I port forwarded to a Raspberry Pi, hardened it, then connected it to my laptop using a WireGuard VPN tunnel. Redirected all connections through to where the server runs. Learned a lot in the process.</p>
-                        </a>
-                    </div>
-                    <div class="project reveal">
-                        <a href="https://bedroc.cagancalidag.com/">
-                            <div class="project-image">
-                                <img src="/files/images/projects/Bedroc/apple-touch-icon.png" alt="Bedroc">
-                            </div>
-                        </a>
-                        <a href="https://bedroc.cagancalidag.com/" class="project-text">
-                            <h2>Bedroc</h2>
-                            <h3>E2EE, Self-hostable Synchronous Notes</h3>
-                            <p>An end-to-end encrypted, extra private and secure synchronous note taking app, that can be easily self hosted by anyone for free.</p>
-                        </a>
-                    </div>
-                    <div class="project reveal">
-                        <a href="https://games.cagancalidag.com/">
-                            <div class="project-image">
-                                <img src="/files/images/projects/Simple-Web-Games/favicon-games.png" alt="Bedroc">
-                            </div>
-                        </a>
-                        <a href="https://games.cagancalidag.com/" class="project-text">
-                            <h2>Offline Web Games for Hangouts</h2>
-                            <h3>Bunch of simple games, playable offline</h3>
-                            <p>This all-inclusive, no CDN website provides numerous simple games that are playable either ONLINE OR OFFLINE by adding the site to home screen as a standalone app. Site works offline after intitial load! All these games are meant to be played with friends.</p>
-                        </a>
-                    </div>
-                    <div class="project reveal">
-                        <a href="/">
-                            <div class="project-image">
-                                <img src="/files/images/question-mark-circle-outline-192.png" alt="Listify">
-                            </div>
-                        </a>
-                        <a href="/" class="project-text">
-                            <h2>Listify</h2>
-                            <h3>AI Playlist Organizer for Spotify</h3>
-                            <p>An app that organizes your Spotify playlists based on your specifications, using your metadata and AI to classify your favorite songs.</p>
-                        </a>
-                    </div>
-                    <div class="project reveal">
-                        <a href="https://blogs.cagancalidag.com">
-                            <div class="project-image">
-                                <img src="https://blogs.cagancalidag.com/favicon.ico" alt="Blogs">
-                            </div>
-                        </a>
-                        <a href="/" class="project-text">
-                            <h2>Blogs (Tech Diary)</h2>
-                            <h3>Yapping about what I've done</h3>
-                            <p>Just a personal blog where I journal my tech journey, how I set up and configure my tools, how I develop my products and what I learnt.</p>
-                        </a>
-                    </div>
-                </div>
-            </section>
-
+      </div>
+      <div>
+        <div style="margin-bottom:20px;">
+          <span class="availability">
+            <span class="avail-dot"></span>
+            <span data-lang="en" class="lang-active">Open to internships &amp; collaborations</span>
+            <span data-lang="tr">Staj ve iş birliğine açık</span>
+            <span data-lang="fr">Disponible pour stages et collaborations</span>
+          </span>
         </div>
-        <div class="footer">
-            <div class="footer-row">
-                <div class="footer-social">
-                    <a href="https://www.linkedin.com/in/çağanefeçalıdağ" target="_blank"><i class="fa fa-linkedin-square"></i> LinkedIn</a> &nbsp;&nbsp;
-                    <a href="https://github.com/MrBiscuitTR" target="_blank"><i class="fa fa-github"></i> GitHub</a> &nbsp;&nbsp;
-                    <a href="https://www.instagram.com/cagancalidag/" target="_blank"><i class="fa fa-instagram"></i> Instagram</a> &nbsp;&nbsp;
-                    <a href="https://www.twitter.com/Caganefe1" target="_blank"><i class="fa fa-twitter-square"></i> Twitter</a>
-                </div>
+        <div class="stat-row">
+          <div class="stat">
+            <div class="stat-num">9+</div>
+            <div class="stat-label">
+              <span data-lang="en" class="lang-active">Years coding</span>
+              <span data-lang="tr">Yıllık deneyim</span>
+              <span data-lang="fr">Ans de code</span>
             </div>
-            
-            <div class="copyright-bottom">
-                <p>© 2023<script>
-                    document.write("-", new Date().getFullYear());
-                </script> <noscript>2024</noscript> Çağan Efe Çalıdağ, All rights reserved.</p>
+          </div>
+          <div class="stat">
+            <div class="stat-num">13+</div>
+            <div class="stat-label">
+              <span data-lang="en" class="lang-active">Projects shipped</span>
+              <span data-lang="tr">Tamamlanan proje</span>
+              <span data-lang="fr">Projets livrés</span>
             </div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">3</div>
+            <div class="stat-label">
+              <span data-lang="en" class="lang-active">Languages spoken</span>
+              <span data-lang="tr">Konuşulan dil</span>
+              <span data-lang="fr">Langues parlées</span>
+            </div>
+          </div>
         </div>
-    </body>
-    <!-- at some point add some cool effects and animations like maybe flashlight effect in general container, or
-     matrix style raining characters for revalign divs etc. also maybe fish in the background? 
-        looks like an ocean anyways. -->
+
+        <!-- timeline -->
+        <div style="margin-top:32px;">
+          <span class="section-label" style="margin-bottom:16px;">
+            <span data-lang="en" class="lang-active">Timeline</span>
+            <span data-lang="tr">Zaman çizelgesi</span>
+            <span data-lang="fr">Parcours</span>
+          </span>
+          <div class="timeline">
+            <div class="timeline-item wip">
+              <div class="timeline-dot"></div>
+              <div class="timeline-period">2024 — present</div>
+              <div class="timeline-title">Université Paris-Saclay</div>
+              <div class="timeline-sub">
+                <span data-lang="en" class="lang-active">L1 Mathématiques-Informatique</span>
+                <span data-lang="tr">L1 Matematik-Bilgisayar Bilimleri</span>
+                <span data-lang="fr">L1 Mathématiques-Informatique</span>
+              </div>
+              <span class="timeline-badge">
+                <span data-lang="en" class="lang-active">current</span>
+                <span data-lang="tr">devam ediyor</span>
+                <span data-lang="fr">en cours</span>
+              </span>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-period">2020 — 2024</div>
+              <div class="timeline-title">Saint Joseph French High School</div>
+              <div class="timeline-sub">
+                <span data-lang="en" class="lang-active">İstanbul — graduated 2024</span>
+                <span data-lang="tr">İstanbul — 2024'te mezun oldu</span>
+                <span data-lang="fr">Istanbul — diplômé en 2024</span>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-period">2016 — ongoing</div>
+              <div class="timeline-title">
+                <span data-lang="en" class="lang-active">Self-taught Developer</span>
+                <span data-lang="tr">Kendi kendine öğrenen geliştirici</span>
+                <span data-lang="fr">Développeur autodidacte</span>
+              </div>
+              <div class="timeline-sub">
+                <span data-lang="en" class="lang-active">Started at 10, got serious at 12</span>
+                <span data-lang="tr">10 yaşında başladı, 12'de ciddiye aldı</span>
+                <span data-lang="fr">Commencé à 10 ans, sérieux à 12</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- skills -->
+  <div class="section-divider"></div>
+  <section class="section-block" id="skills">
+    <div class="section-header reveal">
+      <span class="section-label">
+        <span data-lang="en" class="lang-active">Skills</span>
+        <span data-lang="tr">Yetenekler</span>
+        <span data-lang="fr">Compétences</span>
+      </span>
+      <h2 class="section-title">
+        <span data-lang="en" class="lang-active">What I work with</span>
+        <span data-lang="tr">Çalıştığım teknolojiler</span>
+        <span data-lang="fr">Avec quoi je travaille</span>
+      </h2>
+    </div>
+    <div class="skills-grid">
+
+      <div class="skill-card reveal">
+        <div class="skill-card-title">Languages</div>
+        <div class="skill-card-pills">
+          <span class="skill-pill">JavaScript</span>
+          <span class="skill-pill">TypeScript</span>
+          <span class="skill-pill">HTML</span>
+          <span class="skill-pill">CSS / Tailwind</span>
+          <span class="skill-pill">SQL</span>
+          <span class="skill-pill">Java</span>
+          <span class="skill-pill">C# / Unity</span>
+          <span class="skill-pill">C++</span>
+          <span class="skill-pill">Rust <em style="font-size:11px;opacity:0.6">(learning)</em></span>
+          <span class="skill-pill expandable">Python</span>
+          <div class="skill-expandable-content"><div class="exp-inner">
+            <span class="skill-pill">flask</span>
+            <span class="skill-pill">pandas</span>
+            <span class="skill-pill">numpy</span>
+            <span class="skill-pill">sklearn</span>
+            <span class="skill-pill">opencv</span>
+            <span class="skill-pill">matplotlib</span>
+            <span class="skill-pill">bs4</span>
+            <span class="skill-pill">requests</span>
+          </div></div>
+          </div>
+      </div>
+
+      <div class="skill-card reveal">
+        <div class="skill-card-title">Frameworks &amp; Runtime</div>
+        <div class="skill-card-pills">
+          <span class="skill-pill">React</span>
+          <span class="skill-pill">Svelte 5</span>
+          <span class="skill-pill">Flask</span>
+          <span class="skill-pill">Node.js</span>
+          <span class="skill-pill">REST APIs</span>
+          <span class="skill-pill">Modular architecture</span>
+        </div>
+      </div>
+
+      <div class="skill-card reveal">
+        <div class="skill-card-title">AI &amp; Automation</div>
+        <div class="skill-card-pills">
+          <span class="skill-pill">AI Agents</span>
+          <span class="skill-pill">MCP</span>
+          <span class="skill-pill">Prompt Engineering</span>
+          <span class="skill-pill">Ollama</span>
+          <span class="skill-pill">n8n</span>
+          <span class="skill-pill">OpenAI-compatible API</span>
+          <span class="skill-pill expandable">Python AI/ML libs</span>
+          <div class="skill-expandable-content"><div class="exp-inner">
+            <span class="skill-pill">transformers</span>
+            <span class="skill-pill">diffusers</span>
+            <span class="skill-pill">torch</span>
+            <span class="skill-pill">bitsandbytes</span>
+            <span class="skill-pill">ollama-python</span>
+            <span class="skill-pill">fastmcp</span>
+          </div></div>
+          </div>
+      </div>
+
+      <div class="skill-card reveal">
+        <div class="skill-card-title">Tools &amp; Software</div>
+        <div class="skill-card-pills">
+          <span class="skill-pill">Git / GitHub</span>
+          <span class="skill-pill">VS Code</span>
+          <span class="skill-pill">Docker / Compose</span>
+          <span class="skill-pill">Caddy</span>
+          <span class="skill-pill">Claude Code</span>
+          <span class="skill-pill">Figma</span>
+          <span class="skill-pill">Photoshop</span>
+          <span class="skill-pill">Blender</span>
+        </div>
+      </div>
+
+      <div class="skill-card reveal">
+        <div class="skill-card-title">Databases</div>
+        <div class="skill-card-pills">
+          <span class="skill-pill">MongoDB</span>
+          <span class="skill-pill">MySQL</span>
+          <span class="skill-pill">PostgreSQL</span>
+          <span class="skill-pill">Firebase</span>
+          <span class="skill-pill">Pinecone</span>
+          <span class="skill-pill">Weaviate</span>
+          <span class="skill-pill">Adminer</span>
+        </div>
+      </div>
+
+      <div class="skill-card reveal">
+        <div class="skill-card-title">Infra &amp; Security</div>
+        <div class="skill-card-pills">
+          <span class="skill-pill">Linux</span>
+          <span class="skill-pill">Server hardening</span>
+          <span class="skill-pill">Networking / VPNs</span>
+          <span class="skill-pill">ufw / iptables</span>
+          <span class="skill-pill">Domain management</span>
+          <span class="skill-pill">Cloud (GCP)</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- certifications -->
+  <div class="section-divider"></div>
+  <section class="section-block" id="certifications">
+    <div class="section-header reveal">
+      <span class="section-label">
+        <span data-lang="en" class="lang-active">Certifications</span>
+        <span data-lang="tr">Sertifikalar</span>
+        <span data-lang="fr">Certifications</span>
+      </span>
+      <h2 class="section-title">
+        <span data-lang="en" class="lang-active">Credentials</span>
+        <span data-lang="tr">Belgeler</span>
+        <span data-lang="fr">Diplômes &amp; certificats</span>
+      </h2>
+      <p style="font-size:14px;color:var(--text-muted);margin-top:8px;font-weight:300;">
+        <span data-lang="en" class="lang-active">I learn to build things, not to collect certificates — but here's what I've picked up along the way.</span>
+        <span data-lang="tr">Sertifika toplamak için değil, bir şeyler inşa etmek için öğreniyorum — ama bunlar yolda kazandıklarım.</span>
+        <span data-lang="fr">J'apprends pour construire, pas pour collectionner des diplômes — mais voici ce que j'ai obtenu en chemin.</span>
+      </p>
+    </div>
+    <div class="certs-grid">
+      <div class="cert-card reveal" onclick="window.open('/files/pdfs/TI MFINUE 2023 Certificat.pdf','_blank')">
+        <img src="files/images/MFINUE1-300x300.png" alt="MFINUE">
+        <div class="cert-card-title">MFINUE 2023 — IT Team Member</div>
+        <div class="cert-card-meta"></div>
+        <div class="cert-card-issuer"><a class="inline-link" href="https://mfinue.org" target="_blank" onclick="event.stopPropagation()">mfinue.org</a></div>
+      </div>
+      <div class="cert-card reveal" onclick="window.open('/files/pdfs/TI MFINUE 2024.pdf.pdf','_blank')">
+        <img src="files/images/MFINUE1-300x300.png" alt="MFINUE">
+        <div class="cert-card-title">MFINUE 2024 — IT Lead, MFINUE Connect</div>
+        <div class="cert-card-meta">Further developed and led development</div>
+        <div class="cert-card-issuer"><a class="inline-link" href="https://mfinue.org" target="_blank" onclick="event.stopPropagation()">mfinue.org</a></div>
+      </div>
+      <div class="cert-card reveal" onclick="window.open('/files/pdfs/20241128_GAEL_attestation_réussite_CALIDAG_Cagan Efe.pdf','_blank')">
+        <img src="files/images/France_Éducation_international_logo_2024.svg" alt="France Éducation" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span style="display:none;font-family:var(--mono);font-size:12px;color:var(--accent);">France Éducation</span>
+        <div class="cert-card-title">DALF C1 — French</div>
+        <div class="cert-card-meta"></div>
+        <div class="cert-card-issuer"><a class="inline-link" href="https://www.france-education-international.fr/" target="_blank" onclick="event.stopPropagation()">France Éducation International</a></div>
+      </div>
+      <div class="cert-card reveal" onclick="window.open('/files/pdfs/Cagan_Efe_Calidag_IELTS_TRF_noid_censored.pdf','_blank')">
+        <img src="files/images/IELTS_logo.svg" alt="IELTS" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span style="display:none;font-family:var(--mono);font-size:13px;color:var(--accent);">IELTS</span>
+        <div class="cert-card-title">IELTS C1+ — English</div>
+        <div class="cert-card-meta"></div>
+        <div class="cert-card-issuer"><a class="inline-link" href="https://www.britishcouncil.org" target="_blank" onclick="event.stopPropagation()">British Council</a></div>
+      </div>
+      <div class="cert-card reveal" onclick="window.open('/files/pdfs/AP_Scholar_with_honor.pdf','_blank')">
+        <img src="https://atlas.collegeboard.org/apricot/prod/4.7.1/assets/apple-touch-icon.png" alt="AP">
+        <div class="cert-card-title">AP® Scholar with Honor</div>
+        <div class="cert-card-meta">CS A · Calc BC · Physics C · Physics 1 — all 5s</div>
+        <div class="cert-card-issuer"><a class="inline-link" href="https://www.collegeboard.org/" target="_blank" onclick="event.stopPropagation()">College Board</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- projects -->
+  <div class="section-divider"></div>
+  <section class="section-block" id="projects">
+    <div class="section-header reveal">
+      <span class="section-label">
+        <span data-lang="en" class="lang-active">Projects</span>
+        <span data-lang="tr">Projeler</span>
+        <span data-lang="fr">Projets</span>
+      </span>
+      <h2 class="section-title">
+        <span data-lang="en" class="lang-active">Things I've built</span>
+        <span data-lang="tr">Yaptığım şeyler</span>
+        <span data-lang="fr">Ce que j'ai construit</span>
+      </h2>
+      <p style="font-size:14px;color:var(--text-muted);margin-top:8px;font-weight:300;">
+        <span data-lang="en" class="lang-active">Click any card to learn more.</span>
+        <span data-lang="tr">Daha fazla bilgi için bir karta tıklayın.</span>
+        <span data-lang="fr">Cliquez sur une carte pour en savoir plus.</span>
+      </p>
+    </div>
+    <div class="projects-grid">
+
+      <a class="project-card reveal" href="/pages/projects/Metaclass/index.html">
+        <div class="project-card-icon">
+          <img src="files/images/projects/metaclass/logo192-metaclass.png" alt="Metaclass">
+        </div>
+        <div class="project-card-body">
+          <div class="project-card-name">Metaclass</div>
+          <div class="project-card-sub">React · Firebase · TypeScript</div>
+          <p class="project-card-desc">School platform replacing a messy Google Sites setup. Class pages, announcements, calendar, and fast navigation.</p>
+        </div>
+      </a>
+
+      <a class="project-card reveal" href="/pages/projects/Hanımcılar/index.html">
+        <div class="project-card-icon">
+          <img src="files/images/projects/hanimcilar/logo192-hanimcilar.png" alt="Hanımcılar">
+        </div>
+        <div class="project-card-body">
+          <div class="project-card-name">Hanımcılar</div>
+          <div class="project-card-sub">Node.js · Firebase</div>
+          <p class="project-card-desc">Collaborative polaroid photo albums with themes and user accounts. Started static, grew into a full-stack app.</p>
+        </div>
+      </a>
+
+      <a class="project-card reveal" href="/pages/projects/MFINUE Connect/index.html">
+        <div class="project-card-icon">
+          <img src="files/images/subject-connect.jpg" alt="MFINUE Connect">
+        </div>
+        <div class="project-card-body">
+          <div class="project-card-name">MFINUE Connect</div>
+          <div class="project-card-sub">MUN Conference Portal</div>
+          <p class="project-card-desc">All-in-one portal used by organizers, participants, and advisors of a French MUN conference.</p>
+        </div>
+      </a>
+
+      <a class="project-card reveal" href="https://twoplace.cagancalidag.com" target="_blank" rel="noopener">
+        <div class="project-card-icon">
+          <img src="files/images/projects/TwoPlace/twoplace-192.png" alt="TwoPlace">
+        </div>
+        <div class="project-card-body">
+          <div class="project-card-name">TwoPlace</div>
+          <div class="project-card-sub">WebRTC · Privacy-first</div>
+          <p class="project-card-desc">Minimal, secure video call app for couples. No telemetry, data-friendly, intimate.</p>
+        </div>
+      </a>
+
+      <a class="project-card reveal" href="https://github.com/MrBiscuitTR/P.O.T.A.T.O" target="_blank" rel="noopener">
+        <div class="project-card-icon">
+          <img src="files/images/projects/POTATO/favicon.png" alt="POTATO">
+        </div>
+        <div class="project-card-body">
+          <div class="project-card-name">P.O.T.A.T.O</div>
+          <div class="project-card-sub">Python · Ollama · MCP · Open-source</div>
+          <p class="project-card-desc">Local vocal AI agent with web GUI and many tools. Fully offline, no cloud required. Current main project.</p>
+        </div>
+      </a>
+
+      <a class="project-card reveal" href="https://bedroc.cagancalidag.com/" target="_blank" rel="noopener">
+        <div class="project-card-icon">
+          <img src="files/images/projects/Bedroc/apple-touch-icon.png" alt="Bedroc">
+        </div>
+        <div class="project-card-body">
+          <div class="project-card-name">Bedroc</div>
+          <div class="project-card-sub">E2EE · Self-hostable</div>
+          <p class="project-card-desc">End-to-end encrypted, extra-private synchronous note-taking. Self-hostable by anyone for free.</p>
+        </div>
+      </a>
+
+      <a class="project-card reveal" href="https://consulted.cagancalidag.com/" target="_blank" rel="noopener">
+        <div class="project-card-icon">
+          <img src="files/images/projects/ConsultEd/png/consulted_favicon-192.png" alt="ConsultED">
+        </div>
+        <div class="project-card-body">
+          <div class="project-card-name">ConsultED</div>
+          <div class="project-card-sub">Gemini AI · Subscriptions</div>
+          <p class="project-card-desc">All-inclusive consultancy platform for EU university applications from Turkey, with AI support and subscription plans.</p>
+        </div>
+      </a>
+
+      <a class="project-card reveal" href="https://games.cagancalidag.com/" target="_blank" rel="noopener">
+        <div class="project-card-icon">
+          <img src="files/images/projects/Simple-Web-Games/favicon-games.png" alt="Games">
+        </div>
+        <div class="project-card-body">
+          <div class="project-card-name">Offline Web Games</div>
+          <div class="project-card-sub">PWA · No CDN</div>
+          <p class="project-card-desc">A collection of local-multiplayer games that work fully offline after first load. Add to home screen as a standalone app.</p>
+        </div>
+      </a>
+
+      <a class="project-card reveal" href="/pages/projects/Utilities/index.html">
+        <div class="project-card-icon">
+          <img src="files/images/projects/Utilities/utilities-192.png" alt="Utilities">
+        </div>
+        <div class="project-card-body">
+          <div class="project-card-name">Utilities</div>
+          <div class="project-card-sub">Independent tools</div>
+          <p class="project-card-desc">Personal tools built so I never need a third-party website for things I can do myself.</p>
+        </div>
+      </a>
+
+      <a class="project-card reveal" href="https://blogs.cagancalidag.com" target="_blank" rel="noopener">
+        <div class="project-card-icon">
+          <img src="https://blogs.cagancalidag.com/favicon.ico" alt="Blogs">
+        </div>
+        <div class="project-card-body">
+          <div class="project-card-name">Tech Blog</div>
+          <div class="project-card-sub">Diary / devlog</div>
+          <p class="project-card-desc">I journal my tech journey here — setups, builds, things I learned and occasionally things that blew up.</p>
+        </div>
+      </a>
+
+      <div class="project-card reveal" style="cursor:default;opacity:0.5;">
+        <div class="project-card-icon">
+          <img src="files/images/question-mark-circle-outline-192.png" alt="Listify">
+        </div>
+        <div class="project-card-body">
+          <div class="project-card-name">Listify</div>
+          <div class="project-card-sub" style="color:var(--text-faint);">coming soon</div>
+          <p class="project-card-desc">AI-powered Spotify playlist organizer — classifies your songs based on metadata and your own preferences.</p>
+        </div>
+      </div>
+
+      <a class="project-card reveal" href="/">
+        <div class="project-card-icon">
+          <img src="files/images/projects/n8n/n8n.png" alt="n8n">
+        </div>
+        <div class="project-card-body">
+          <div class="project-card-name">n8n Workflows</div>
+          <div class="project-card-sub">Automation · Self-hosted</div>
+          <p class="project-card-desc">A bunch of automation workflows that have saved me a lot of time. Staying local and privacy-focused throughout.</p>
+        </div>
+      </a>
+
+      <div class="project-card reveal" style="cursor:default;">
+        <div class="project-card-icon">
+          <img src="files/images/projects/mcserver/minecrafticon.png" alt="Minecraft Server">
+        </div>
+        <div class="project-card-body">
+          <div class="project-card-name">Minecraft Server</div>
+          <div class="project-card-sub">Linux · WireGuard · ufw · iptables</div>
+          <p class="project-card-desc">Port forwarded to a Raspberry Pi, hardened the OS, then connected it to my laptop via a WireGuard VPN tunnel and redirected all external connections through. Server hardening, firewall rules, careful port forwarding — learned a lot about networking and security in the process.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-social">
+      <a href="https://www.linkedin.com/in/çağanefeçalıdağ" target="_blank" rel="noopener"><i class="fa fa-linkedin-square"></i> LinkedIn</a>
+      <a href="https://github.com/MrBiscuitTR" target="_blank" rel="noopener"><i class="fa fa-github"></i> GitHub</a>
+      <a href="https://www.instagram.com/cagancalidag/" target="_blank" rel="noopener"><i class="fa fa-instagram"></i> Instagram</a>
+      <a href="https://www.twitter.com/Caganefe1" target="_blank" rel="noopener"><i class="fa fa-twitter-square"></i> Twitter</a>
+    </div>
+    <span class="footer-copy">© 2023–<script>document.write(new Date().getFullYear())</script> Çağan Efe Çalıdağ</span>
+  </div>
+</footer>
+
+<!-- tweaks panel -->
+<div id="tweaks-panel">
+  <div class="tweak-header">
+    <span>Tweaks</span>
+    <button class="tweak-close" id="tweaks-close">✕</button>
+  </div>
+
+  <div class="tweak-row">
+    <label class="tweak-label">Accent color</label>
+    <input type="color" id="tweak-accent" value="#00c4c4">
+  </div>
+
+  <div class="tweak-row">
+    <label class="tweak-label">Background tone</label>
+    <select id="tweak-bg">
+      <option value="dark">Dark (default)</option>
+      <option value="darker">Darker (deeper black)</option>
+      <option value="warm">Warm dark</option>
+      <option value="navy">Navy</option>
+    </select>
+  </div>
+
+  <div class="tweak-divider"></div>
+
+  <div class="tweak-row">
+    <label class="tweak-label">Rain intensity — <span id="rain-val">medium</span></label>
+    <input type="range" id="tweak-rain" min="0" max="3" step="1" value="1">
+  </div>
+
+  <div class="tweak-row">
+    <label class="tweak-label">Card border radius</label>
+    <select id="tweak-radius">
+      <option value="4px">Sharp (4px)</option>
+      <option value="8px" selected>Default (8px)</option>
+      <option value="14px">Rounded (14px)</option>
+      <option value="20px">Pill (20px)</option>
+    </select>
+  </div>
+
+  <div class="tweak-row">
+    <label class="tweak-label">Project card height — <span id="card-val">auto</span></label>
+    <input type="range" id="tweak-cards" min="0" max="2" step="1" value="1">
+  </div>
+</div>
+
+<script>
+// tweaks protocol
+window.addEventListener('message', function(e) {
+  if (e.data && e.data.type === '__activate_edit_mode') {
+    document.getElementById('tweaks-panel').classList.add('visible');
+  }
+  if (e.data && e.data.type === '__deactivate_edit_mode') {
+    document.getElementById('tweaks-panel').classList.remove('visible');
+  }
+});
+window.parent.postMessage({ type: '__edit_mode_available' }, '*');
+
+document.getElementById('tweaks-close').addEventListener('click', function() {
+  document.getElementById('tweaks-panel').classList.remove('visible');
+  window.parent.postMessage({ type: '__edit_mode_dismissed' }, '*');
+});
+
+// accent color
+document.getElementById('tweak-accent').addEventListener('input', function() {
+  var hex = this.value;
+  // parse hex to rgb for rgba usage
+  var r = parseInt(hex.slice(1,3),16);
+  var g = parseInt(hex.slice(3,5),16);
+  var b = parseInt(hex.slice(5,7),16);
+  document.documentElement.style.setProperty('--accent', hex);
+  document.documentElement.style.setProperty('--accent-dim', 'rgba('+r+','+g+','+b+',0.7)');
+  document.documentElement.style.setProperty('--border', 'rgba('+r+','+g+','+b+',0.18)');
+  document.documentElement.style.setProperty('--border-strong', 'rgba('+r+','+g+','+b+',0.35)');
+  document.documentElement.style.setProperty('--accent-glow', 'rgba('+r+','+g+','+b+',0.18)');
+  window.parent.postMessage({ type: '__edit_mode_set_keys', edits: { accentColor: hex } }, '*');
+});
+
+// background tone
+var bgPresets = {
+  dark:   { '--bg': '#0b0f14', '--bg2': '#111820', '--surface': '#141d28', '--surface2': '#1a2535' },
+  darker: { '--bg': '#060809', '--bg2': '#0c1016', '--surface': '#0f1520', '--surface2': '#141c28' },
+  warm:   { '--bg': '#0f0d0b', '--bg2': '#181410', '--surface': '#1c1814', '--surface2': '#231f1a' },
+  navy:   { '--bg': '#090c14', '--bg2': '#0e1220', '--surface': '#111828', '--surface2': '#172030' },
+};
+document.getElementById('tweak-bg').addEventListener('change', function() {
+  var p = bgPresets[this.value];
+  if (!p) return;
+  Object.entries(p).forEach(function(kv) {
+    document.documentElement.style.setProperty(kv[0], kv[1]);
+  });
+  window.parent.postMessage({ type: '__edit_mode_set_keys', edits: { bgTone: this.value } }, '*');
+});
+
+// rain intensity
+var rainLabels = ['off', 'subtle', 'medium', 'heavy'];
+var rainOpacities = ['0', '0.12', '0.22', '0.4'];
+document.getElementById('tweak-rain').addEventListener('input', function() {
+  var v = parseInt(this.value);
+  document.getElementById('rain-val').textContent = rainLabels[v];
+  document.querySelectorAll('.rain-word').forEach(function(w) {
+    w.style.setProperty('--rain-max-opacity', rainOpacities[v]);
+    if (v === 0) w.style.animationPlayState = 'paused';
+    else w.style.animationPlayState = 'running';
+  });
+  window.parent.postMessage({ type: '__edit_mode_set_keys', edits: { rainIntensity: v } }, '*');
+});
+
+// card radius
+document.getElementById('tweak-radius').addEventListener('change', function() {
+  document.documentElement.style.setProperty('--radius', this.value);
+  document.documentElement.style.setProperty('--radius-sm', parseInt(this.value) > 8 ? '6px' : '5px');
+  window.parent.postMessage({ type: '__edit_mode_set_keys', edits: { cardRadius: this.value } }, '*');
+});
+
+// project card density
+var cardHeights = ['200px', 'auto', 'auto'];
+var cardClamps = ['2', '3', '4'];
+var cardLabels = ['compact', 'default', 'spacious'];
+document.getElementById('tweak-cards').addEventListener('input', function() {
+  var v = parseInt(this.value);
+  document.getElementById('card-val').textContent = cardLabels[v];
+  document.querySelectorAll('.project-card-desc').forEach(function(el) {
+    el.style.webkitLineClamp = cardClamps[v];
+  });
+  document.querySelectorAll('.project-card').forEach(function(el) {
+    el.style.minHeight = v === 0 ? '0' : '';
+  });
+  window.parent.postMessage({ type: '__edit_mode_set_keys', edits: { cardDensity: v } }, '*');
+});
+</script>
+
+<script>
+  document.getElementById('menu-toggle').addEventListener('click', function() {
+    document.getElementById('main-nav').classList.toggle('open');
+  });
+</script>
+
+</body>
 </html>

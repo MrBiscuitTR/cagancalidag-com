@@ -1,99 +1,110 @@
-<!-- Default template for all project presentation pages. -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <script>if(location.protocol==="http:"&&!/^\d+\.\d+\.\d+\.\d+$/.test(location.hostname)&&location.hostname!=="localhost")location.replace("https:"+location.href.slice(5));</script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script>document.title = "Project: "+decodeURI(window.location.pathname.split("/")[3].replace(".html",""))</script>
-    <link rel="stylesheet" href="/css/projects.css">
-    <link rel="stylesheet" href="/css/style-main.css">
-    <script defer src="../dynamicLoader.js"></script>
-    <script defer src="https://kit.fontawesome.com/09fb08f3d8.js" crossorigin="anonymous"></script>
-    <noscript><span style="background-color: rgb(201, 80, 10); width: 100%; height: 100%; margin: 0 auto 0 auto; text-align: center; display: block;">Please enable javascript for the best user experience! Most of the content will be invisible to you unless you enable it.</span></noscript>
+  <meta charset="UTF-8">
+  <script>if(location.protocol==="http:"&&!/^\d+\.\d+\.\d+\.\d+$/.test(location.hostname)&&location.hostname!=="localhost")location.replace("https:"+location.href.slice(5));</script>
+  <script src="../../../js/theme.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project: Hanımcılar</title>
+  <link rel="icon" href="../../../favicon.ico">
+  <link rel="stylesheet" href="../../../css/main.css">
+  <link rel="stylesheet" href="../../../css/projects.css">
+  <script defer src="../dynamicLoader.js"></script>
+  <script defer src="https://kit.fontawesome.com/09fb08f3d8.js" crossorigin="anonymous"></script>
+  <noscript><span style="display:block;background:#c95010;padding:10px;text-align:center;font-size:14px;">Most content requires JavaScript. Please enable it.</span></noscript>
 </head>
 <body>
-    <div class="header">
-        <div class="header-image">
-            <a href="/"><img src="/files/images/icon-192.png" alt="cagancalidag icon"></a>
-        </div>
-        <div class="header-nav">
-            <nav>
-                <a href="/#about">About</a>
-                <a href="/#skills">Skills</a>
-                <a href="/#projects">Projects</a>
-                <!-- <a href="/cv">CV</a> -->
-                <a href="/pages/contact.html">Contact</a>
-            </nav>
-        </div>
+
+<header class="site-header" id="header">
+  <div class="header-inner">
+    <a class="header-logo" href="/">
+      <img src="../../../files/images/icon-192.png" alt="cagancalidag">
+      <span class="header-logo-text">cagancalidag<span>.</span>com</span>
+    </a>
+    <nav class="header-nav" id="main-nav">
+      <a href="/#about">About</a>
+      <a href="/#skills">Skills</a>
+      <a href="/#projects">Projects</a>
+      <a href="/pages/contact.html">Contact</a>
+    </nav>
+    <div class="header-controls">
+      <button class="ctrl-btn lang-btn" id="lang-toggle" aria-label="Switch language">EN</button>
+      <button class="ctrl-btn" id="theme-toggle" aria-label="Toggle theme">◐</button>
+      <button class="ctrl-btn menu-toggle" id="menu-toggle" aria-label="Menu">☰</button>
     </div>
-    <div class="project-page-container">
-        <h1 class="projectname">Project: <span class="projectname">Hanimcilar</span></h1>
-        <div class="modal"></div>
-        <div class="screenshot-slider">
-            <h2>Screenshots</h2>
-            <h3>Slide to see more pictures & click on an image for a better view!</h3>
-            <div class="screenshotswithbuttons">
-                <button class="prev">‹</button>
-                    <div class="screenshots">
-                        <img class="screenshot" src="/files/images/MFINUE1-300x300.png" alt="connect-img1">
-                        <img class="screenshot" src="/files/images/icon-192.png" alt="connect-img2">
-                        <img class="screenshot" src="/files/images/projects/connect/img3" alt="connect-img3">
-                        <img class="screenshot" src="/files/images/icon-192.png" alt="connect-img4">
-                        <img class="screenshot" src="/files/images/icon-192.png" alt="connect-img2">
-                    </div>
-                <button class="next">›</button>
-            </div>
-        </div>
-        <div class="project-infos">
-            <div class="info-panel project-description">
-                <h2>Description</h2>
-                <p>
-                    Hanımcılar (can be translated as "Ladies' men" or "Men who value their girl/wife over everything") is a themed polaroid photo album project that I developed for my girlfriend at the time as a new year's present. It was originally a static site where I put some of our photos in the form of polaroid photos with text beneath them, hanged on a bulletin board with red pins. I then turned it into a dynamic site with a database and authentication system to make it publicly accessible, more presentable and shareable. Everyone can now create their own albums, upload their photos with texts and dates; and share them with their loved ones, friends, or the world; with different privacy settings and collaboration options. 
-                </p>
-            </div>
-            <div class="info-panel technical-info">
-                <h2>Technical Information</h2>
-                <ul>
-                    <li>Language(s): TypeScript, JavaScript, CSS</li>
-                    <li>Framework(s):  React (TSX)</li>
-                    <li>Database(s):  Firebase - Cloud Firestore & Storage</li>
-                    <li>Hosting:  Firebase</li>
-                </ul>
-                &nbsp;&nbsp;Other:
-                <ul>
-                    <li>Authentication - Firebase Email & Password, Google OAuth (For GAPI token acquisition) </li>
-                    <li>APIs - Google Drive Picker</li>
-                </ul>
-            </div>
-            <div class="info-panel project-links">
-                <h2>Links</h2>
-                <ul>
-                    <li><a target="_blank" href="https://github.com/MrBiscuitTR/hanimcilar">GitHub Repository</a></li>
-                    <li><a target="_blank" href="https://hanimcilar.cagancalidag.com/">Live Demo</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="projectpreview">
-            <!-- preview iframe collapsible -->
-            <div class="projectpreviewbutton collapsible">Preview (click) &nbsp;</div>
-            <div class="content">
-                <iframe src="https://hanimcilar.cagancalidag.com/" title="Hanimcilar Preview" frameborder="none" width="100%" height="100%"></iframe>
-            </div>
-        </div>
+  </div>
+</header>
+
+<div class="project-page-container">
+  <h1 class="projectname">Project: <span class="projectname">Hanımcılar</span></h1>
+  <div class="modal"></div>
+
+  <div class="screenshot-slider">
+    <h2>Screenshots</h2>
+    <h3>Drag or use arrows · click to zoom</h3>
+    <div class="screenshotswithbuttons">
+      <button class="prev">‹</button>
+      <div class="screenshots">
+        <img class="screenshot" src="/files/images/projects/hanimcilar/logo192-hanimcilar.png" alt="Hanımcılar logo">
+        <img class="screenshot" src="/files/images/icon-192.png" alt="placeholder">
+      </div>
+      <button class="next">›</button>
     </div>
-    <div class="footer">
-        <div class="footer-row">
-            <div class="footer-social">
-                <a href="https://www.linkedin.com/in/çağanefeçalıdağ" target="_blank"><i class="fa fa-linkedin-square"></i> LinkedIn</a> &nbsp;&nbsp;
-                <a href="https://github.com/MrBiscuitTR" target="_blank"><i class="fa fa-github"></i> GitHub</a> &nbsp;&nbsp;
-                <a href="https://www.instagram.com/cagancalidag/" target="_blank"><i class="fa fa-instagram"></i> Instagram</a> &nbsp;&nbsp;
-                <a href="https://www.twitter.com/Caganefe1" target="_blank"><i class="fa fa-twitter-square"></i> Twitter</a>
-            </div>
-        </div>
-        <div class="copyright-bottom">
-            <p>© 2023<script>document.write("-", new Date().getFullYear());</script> <noscript>2024</noscript> Çağan Efe Çalıdağ, All rights reserved.</p>
-        </div>
+  </div>
+
+  <div class="project-infos">
+    <div class="info-panel project-description">
+      <h2>Description</h2>
+      <p>Hanımcılar ("men who value their girl above everything") started as a static polaroid photo album I made for my girlfriend as a New Year's present — photos on a bulletin board with red pins and captions. I later turned it into a full dynamic app with user accounts, album creation, privacy settings, collaboration, and customizable themes. Anyone can now create their own album and share it with whoever they want.</p>
     </div>
+    <div class="info-panel technical-info">
+      <h2>Technical Information</h2>
+      <ul>
+        <li>Language(s): TypeScript, JavaScript, CSS</li>
+        <li>Framework(s): React (TSX)</li>
+        <li>Database(s): Firebase — Cloud Firestore &amp; Storage</li>
+        <li>Hosting: Firebase</li>
+      </ul>
+      Other:
+      <ul>
+        <li>Authentication — Firebase Email &amp; Password, Google OAuth</li>
+        <li>APIs — Google Drive Picker</li>
+      </ul>
+    </div>
+    <div class="info-panel project-links">
+      <h2>Links</h2>
+      <ul>
+        <li><a href="https://github.com/MrBiscuitTR/hanimcilar" target="_blank" rel="noopener">GitHub Repository</a></li>
+        <li><a href="https://hanimcilar.cagancalidag.com/" target="_blank" rel="noopener">Live Demo</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="projectpreview">
+    <div class="projectpreviewbutton collapsible">Preview &nbsp;</div>
+    <div class="content">
+      <iframe src="https://hanimcilar.cagancalidag.com/" title="Hanımcılar Preview" frameborder="0" width="100%" height="100%"></iframe>
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-social">
+      <a href="https://www.linkedin.com/in/çağanefeçalıdağ" target="_blank" rel="noopener"><i class="fa fa-linkedin-square"></i> LinkedIn</a>
+      <a href="https://github.com/MrBiscuitTR" target="_blank" rel="noopener"><i class="fa fa-github"></i> GitHub</a>
+      <a href="https://www.instagram.com/cagancalidag/" target="_blank" rel="noopener"><i class="fa fa-instagram"></i> Instagram</a>
+      <a href="https://www.twitter.com/Caganefe1" target="_blank" rel="noopener"><i class="fa fa-twitter-square"></i> Twitter</a>
+    </div>
+    <span class="footer-copy">© 2023–<script>document.write(new Date().getFullYear())</script> Çağan Efe Çalıdağ</span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('menu-toggle').addEventListener('click', function() {
+    document.getElementById('main-nav').classList.toggle('open');
+  });
+</script>
+
 </body>
 </html>

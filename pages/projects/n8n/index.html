@@ -1,9 +1,80 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>n8n</title>
+  <meta charset="UTF-8">
+  <script>if(location.protocol==="http:"&&!/^\d+\.\d+\.\d+\.\d+$/.test(location.hostname)&&location.hostname!=="localhost")location.replace("https:"+location.href.slice(5));</script>
+  <script src="../../../js/theme.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project: n8n Workflows</title>
+  <link rel="icon" href="../../../favicon.ico">
+  <link rel="stylesheet" href="../../../css/main.css">
+  <link rel="stylesheet" href="../../../css/projects.css">
+  <script defer src="https://kit.fontawesome.com/09fb08f3d8.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <h1>n8n</h1>
-    <p>This is the n8n project page. will show and explain all n8n workflows. Under construction.</p>
+
+<header class="site-header" id="header">
+  <div class="header-inner">
+    <a class="header-logo" href="/">
+      <img src="../../../files/images/icon-192.png" alt="cagancalidag">
+      <span class="header-logo-text">cagancalidag<span>.</span>com</span>
+    </a>
+    <nav class="header-nav" id="main-nav">
+      <a href="/#about">About</a>
+      <a href="/#skills">Skills</a>
+      <a href="/#projects">Projects</a>
+      <a href="/pages/contact.html">Contact</a>
+    </nav>
+    <div class="header-controls">
+      <button class="ctrl-btn lang-btn" id="lang-toggle" aria-label="Switch language">EN</button>
+      <button class="ctrl-btn" id="theme-toggle" aria-label="Toggle theme">◐</button>
+      <button class="ctrl-btn menu-toggle" id="menu-toggle" aria-label="Menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<div class="project-page-container">
+  <h1 class="projectname">Project: <span class="projectname">n8n Workflows</span></h1>
+
+  <div class="project-infos">
+    <div class="info-panel project-description">
+      <h2>Description</h2>
+      <p>A growing collection of n8n automation workflows built for personal use. All prioritize privacy — self-hosted, minimal external calls, and local AI via Ollama where possible. Full per-workflow documentation is coming. See the blog for writeups.</p>
+    </div>
+    <div class="info-panel technical-info">
+      <h2>Technical Information</h2>
+      <ul>
+        <li>Platform: n8n (self-hosted via Docker)</li>
+        <li>AI: Ollama, OpenAI-compatible APIs</li>
+        <li>Hosting: Local / home server</li>
+      </ul>
+    </div>
+    <div class="info-panel project-links">
+      <h2>Links</h2>
+      <ul>
+        <li><a href="https://blogs.cagancalidag.com" target="_blank" rel="noopener">Tech Blog — workflow writeups</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-social">
+      <a href="https://www.linkedin.com/in/çağanefeçalıdağ" target="_blank" rel="noopener"><i class="fa fa-linkedin-square"></i> LinkedIn</a>
+      <a href="https://github.com/MrBiscuitTR" target="_blank" rel="noopener"><i class="fa fa-github"></i> GitHub</a>
+      <a href="https://www.instagram.com/cagancalidag/" target="_blank" rel="noopener"><i class="fa fa-instagram"></i> Instagram</a>
+      <a href="https://www.twitter.com/Caganefe1" target="_blank" rel="noopener"><i class="fa fa-twitter-square"></i> Twitter</a>
+    </div>
+    <span class="footer-copy">© 2023–<script>document.write(new Date().getFullYear())</script> Çağan Efe Çalıdağ</span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('menu-toggle').addEventListener('click', function() {
+    document.getElementById('main-nav').classList.toggle('open');
+  });
+</script>
+
 </body>
 </html>

@@ -1,23 +1,18 @@
-<!-- redirect to twoplace.cagancalidag.com -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <script>if(location.protocol==="http:"&&!/^\d+\.\d+\.\d+\.\d+$/.test(location.hostname)&&location.hostname!=="localhost")location.replace("https:"+location.href.slice(5));</script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TwoPlace</title>
-    <link rel="stylesheet" href="/files/css/style.css">
-    <link rel="icon" href="/files/images/favicon.ico" type="image/x-icon">
-    <meta http-equiv="refresh" content="0; url=https://twoplace.cagancalidag.com">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TwoPlace</title>
+  <meta http-equiv="refresh" content="0; url=https://twoplace.cagancalidag.com">
+  <script src="../../../js/theme.js"></script>
+  <link rel="stylesheet" href="../../../css/main.css">
 </head>
-<body>
-    <h1>Redirecting to TwoPlace...</h1>
-    <p>If you are not redirected automatically, follow this <a href="https://twoplace.cagancalidag.com">link</a>.</p>
-    <script>
-        // Optional: Add a script to handle the redirect if meta refresh fails
-        setTimeout(function() {
-            window.location.href = "https://twoplace.cagancalidag.com";
-        }, 5000); // Redirect after 5 seconds
-    </script>
+<body style="display:flex;align-items:center;justify-content:center;min-height:100vh;">
+  <div style="text-align:center;">
+    <p style="font-family:var(--mono);color:var(--text-muted);font-size:14px;">Redirecting to TwoPlace...</p>
+    <a href="https://twoplace.cagancalidag.com" style="color:var(--accent);font-family:var(--mono);font-size:13px;">Click here if not redirected</a>
+  </div>
+  <script>setTimeout(function(){window.location.href='https://twoplace.cagancalidag.com';},1000);</script>
 </body>
 </html>
